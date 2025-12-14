@@ -1,0 +1,6 @@
+.env
+.terraform/
+/bin
+.DS_Store
+*.log
+coverage.out
