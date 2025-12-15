@@ -1,0 +1,85 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "openapi": "api.openapi.json",
+  "name": "Intelligent Tracking",
+  "logo": {
+    "dark": "/logo/intelligent-tracking-darkmode.svg",
+    "light": "/logo/intelligent-tracking-lightmode.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#FF2222",
+    "light": "#FF2222",
+    "dark": "#FF2222",
+    "background": {
+      "light": "#ececec",
+      "dark": "#171717"
+    },
+    "anchors": {
+      "from": "#FF2222",
+      "to": "#2F7AD1"
+    }
+  },
+  "api": {
+    "baseUrl": "https://apiv2.intelltracking.com",
+    "auth": {
+      "method": "bearer"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Home",
+      "url": "https://www.intelltracking.com/"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Contact Us",
+    "url": "https://wa.me/966500300699"
+  },
+  "anchors": [
+
+  ],
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "reference"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "API",
+      "pages": [
+        "reference/api/introduction",
+        {
+          "group": "General",
+          "pages": [
+            "reference/api/match-start-list/{matchId}/get-match-start-list",
+            "reference/api/match-videos/competition/{competitionId}/{matchId}/get-match-video",
+            "reference/api/schedule-matches/list-scheduled-matches",
+            "reference/api/vendor-apis/leagues/list-vendor-apis",
+            "reference/api/vendor-apis/leagues/{id}/get-vendor-api",
+            "reference/api/vendor-apis/matches/events/list-vendor-apis",
+            "reference/api/vendor-apis/matches/events/{id}/get-vendor-api",
+            "reference/api/vendor-apis/matches/formation/list-vendor-apis",
+            "reference/api/vendor-apis/matches/lineups/list-vendor-apis",
+            "reference/api/vendor-apis/matches/list-vendor-apis",
+            "reference/api/vendor-apis/matches/player-stats/list-vendor-apis",
+            "reference/api/vendor-apis/matches/sequence-data/list-vendor-apis",
+            "reference/api/vendor-apis/matches/team-stats/list-vendor-apis",
+            "reference/api/vendor-apis/matches/video-timing/list-vendor-apis",
+            "reference/api/vendor-apis/matches/video/stream/{saffMatchId}/get-vendor-api",
+            "reference/api/vendor-apis/matches/{id}/get-vendor-api",
+            "reference/api/vendor-apis/players/list-vendor-apis",
+            "reference/api/vendor-apis/players/{id}/get-vendor-api",
+            "reference/api/vendor-apis/seasons/list-vendor-apis",
+            "reference/api/vendor-apis/seasons/{id}/get-vendor-api",
+            "reference/api/vendor-apis/teams/list-vendor-apis",
+            "reference/api/vendor-apis/teams/{id}/get-vendor-api"
+          ]
+        }
+      ]
+    }
+  ],
+  "footerSocials": {
+  }
+}
