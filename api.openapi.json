@@ -45,9 +45,11 @@
             "$ref": "#/components/schemas/v1League"
           },
           "message": {
+            "example": "League details fetched successfully",
             "type": "string"
           },
           "statusCode": {
+            "example": 200,
             "format": "int32",
             "type": "integer"
           }
@@ -57,6 +59,7 @@
       "v1League": {
         "properties": {
           "ageLimit": {
+            "example": "U19",
             "type": "string"
           },
           "createdAt": {
@@ -65,27 +68,36 @@
             "type": "string"
           },
           "division": {
+            "example": 2,
             "format": "int32",
             "type": "integer"
           },
           "id": {
+            "example": 123,
             "format": "int32",
             "type": "integer"
           },
           "isoCountryCode": {
+            "example": "SA",
             "type": "string"
           },
           "leagueId": {
+            "example": 123,
             "format": "int32",
             "type": "integer"
           },
           "name": {
+            "example": "League ABC",
             "type": "string"
           },
           "nameEn": {
+            "example": "League ABC (English)",
             "type": "string"
           },
           "seasonIds": {
+            "example": [
+              "456"
+            ],
             "items": {
               "type": "string"
             },
@@ -108,18 +120,22 @@
             "type": "array"
           },
           "limit": {
+            "example": 10,
             "format": "int32",
             "type": "integer"
           },
           "page": {
+            "example": 1,
             "format": "int32",
             "type": "integer"
           },
           "total": {
+            "example": 23,
             "format": "int32",
             "type": "integer"
           },
           "totalPages": {
+            "example": 3,
             "format": "int32",
             "type": "integer"
           }
@@ -132,9 +148,11 @@
             "$ref": "#/components/schemas/v1LeaguesData"
           },
           "message": {
+            "example": "All leagues fetched successfully",
             "type": "string"
           },
           "statusCode": {
+            "example": 200,
             "format": "int32",
             "type": "integer"
           }
