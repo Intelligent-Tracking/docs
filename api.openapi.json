@@ -38,6 +38,106 @@
           }
         },
         "type": "object"
+      },
+      "v1GetLeagueResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/v1League"
+          },
+          "message": {
+            "type": "string"
+          },
+          "statusCode": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "v1League": {
+        "properties": {
+          "ageLimit": {
+            "type": "string"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "division": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "id": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "isoCountryCode": {
+            "type": "string"
+          },
+          "leagueId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nameEn": {
+            "type": "string"
+          },
+          "seasonIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "v1LeaguesData": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/v1League"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "page": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "v1ListLeaguesResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/v1LeaguesData"
+          },
+          "message": {
+            "type": "string"
+          },
+          "statusCode": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
       }
     }
   },
@@ -95,7 +195,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/v1ListLeaguesResponse"
                 }
               }
             },
@@ -133,7 +233,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/v1GetLeagueResponse"
                 }
               }
             },
