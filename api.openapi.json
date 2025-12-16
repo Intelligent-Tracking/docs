@@ -60,6 +60,7 @@
             "type": "string"
           },
           "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
             "format": "date-time",
             "type": "string"
           },
@@ -91,6 +92,7 @@
             "type": "array"
           },
           "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
             "format": "date-time",
             "type": "string"
           }
