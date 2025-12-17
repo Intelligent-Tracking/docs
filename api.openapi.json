@@ -1,48 +1,10 @@
 {
   "components": {
     "schemas": {
-      "intelltrackingv1OrderByDir": {
-        "enum": [
-          "asc",
-          "desc"
-        ],
-        "type": "string"
-      },
-      "protobufAny": {
-        "additionalProperties": {},
-        "properties": {
-          "@type": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "protobufNullValue": {
-        "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\nThe JSON representation for `NullValue` is JSON `null`.",
-        "type": "string"
-      },
-      "rpcStatus": {
-        "properties": {
-          "code": {
-            "format": "int32",
-            "type": "integer"
-          },
-          "details": {
-            "items": {
-              "$ref": "#/components/schemas/protobufAny"
-            },
-            "type": "array"
-          },
-          "message": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "v1GetLeagueResponse": {
+      "leaguesGetLeagueByIdResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/v1League"
+            "$ref": "#/components/schemas/leaguesLeague"
           },
           "message": {
             "example": "League details fetched successfully",
@@ -56,7 +18,24 @@
         },
         "type": "object"
       },
-      "v1League": {
+      "leaguesGetLeaguesResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/leaguesLeaguesData"
+          },
+          "message": {
+            "example": "All leagues fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "leaguesLeague": {
         "properties": {
           "ageLimit": {
             "example": "U19",
@@ -111,11 +90,11 @@
         },
         "type": "object"
       },
-      "v1LeaguesData": {
+      "leaguesLeaguesData": {
         "properties": {
           "data": {
             "items": {
-              "$ref": "#/components/schemas/v1League"
+              "$ref": "#/components/schemas/leaguesLeague"
             },
             "type": "array"
           },
@@ -142,13 +121,13 @@
         },
         "type": "object"
       },
-      "v1ListLeaguesResponse": {
+      "match_start_listFindByMatchIdResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/v1LeaguesData"
+            "$ref": "#/components/schemas/match_start_listMatchStartListData"
           },
           "message": {
-            "example": "All leagues fetched successfully",
+            "example": "Match start list fetched successfully",
             "type": "string"
           },
           "statusCode": {
@@ -158,6 +137,1686 @@
           }
         },
         "type": "object"
+      },
+      "match_start_listMatchStartListData": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/match_start_listMatchStartListItem"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "example": 25,
+            "format": "int32",
+            "type": "integer"
+          },
+          "page": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "example": 22,
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "match_start_listMatchStartListItem": {
+        "properties": {
+          "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "example": 6001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchId": {
+            "example": 5001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "playerId": {
+            "example": 1001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "playerName": {
+            "example": "Mohammed Al-Dawsari",
+            "type": "string"
+          },
+          "position": {
+            "example": "Forward",
+            "type": "string"
+          },
+          "teamId": {
+            "example": 789,
+            "format": "int32",
+            "type": "integer"
+          },
+          "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "match_videosGetMatchByCompetitionResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/match_videosMatchVideoData"
+          },
+          "message": {
+            "example": "Match video data fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "match_videosMatchVideoData": {
+        "properties": {
+          "competitionId": {
+            "example": "comp-123",
+            "type": "string"
+          },
+          "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "duration": {
+            "example": 5400,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchId": {
+            "example": "match-5001",
+            "type": "string"
+          },
+          "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "videoUrl": {
+            "example": "https://example.com/videos/match-5001.mp4",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "matchesDetailMatchResult": {
+        "properties": {
+          "awayTeamScore": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "homeTeamScore": {
+            "example": 3,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesEventType": {
+        "properties": {
+          "assist": {
+            "example": false,
+            "type": "boolean"
+          },
+          "cross": {
+            "example": false,
+            "type": "boolean"
+          },
+          "eventType": {
+            "example": "PASS",
+            "type": "string"
+          },
+          "keyPass": {
+            "example": true,
+            "type": "boolean"
+          },
+          "outcome": {
+            "example": "SUCCESSFUL",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "matchesFormationPosition": {
+        "properties": {
+          "playerId": {
+            "example": 1001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "position": {
+            "$ref": "#/components/schemas/matchesPosition"
+          }
+        },
+        "type": "object"
+      },
+      "matchesGetMatchByIdResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/matchesMatch"
+          },
+          "message": {
+            "example": "Match details fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesGetMatchEventsByEventIdResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/matchesMatchEvent"
+          },
+          "message": {
+            "example": "Match event fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesGetMatchEventsByMatchIdResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/matchesMatchEventsData"
+          },
+          "message": {
+            "example": "All Match events fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesGetMatchFormationByMatchIdResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/matchesMatchFormationsData"
+          },
+          "message": {
+            "example": "All Match formation fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesGetMatchLineupsByMatchIdResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/matchesMatchLineupsData"
+          },
+          "message": {
+            "example": "All Match lineups fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesGetMatchPlayerStatsByMatchIdResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/matchesMatchPlayerStatsData"
+          },
+          "message": {
+            "example": "All Match Player stats fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesGetMatchSequenceDataByMatchIdResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/matchesMatchSequenceDataList"
+          },
+          "message": {
+            "example": "All Match sequence data fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesGetMatchTeamStatsByMatchIdResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/matchesMatchTeamStatsData"
+          },
+          "message": {
+            "example": "All Match Team stats fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesGetMatchesResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/matchesMatchesData"
+          },
+          "message": {
+            "example": "All Matches fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesGetResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/matchesVideoStreamData"
+          },
+          "message": {
+            "example": "Match videos fetched successfully.",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesGetVideoTimingResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/matchesVideoTimingData"
+          },
+          "message": {
+            "example": "Video timing data fetched successfully.",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatch": {
+        "properties": {
+          "analysisCompletedDatetime": {
+            "example": "2025-01-15T20:30:00Z",
+            "type": "string"
+          },
+          "awayTeam": {
+            "$ref": "#/components/schemas/matchesMatchTeam"
+          },
+          "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "detailMatchResult": {
+            "$ref": "#/components/schemas/matchesDetailMatchResult"
+          },
+          "extraFullTime": {
+            "example": 120,
+            "format": "int32",
+            "type": "integer"
+          },
+          "extraMatchResult": {
+            "type": "string"
+          },
+          "fullTime": {
+            "example": 90,
+            "format": "int32",
+            "type": "integer"
+          },
+          "halfTimeDuration": {
+            "example": 45,
+            "format": "int32",
+            "type": "integer"
+          },
+          "homeTeam": {
+            "$ref": "#/components/schemas/matchesMatchTeam"
+          },
+          "id": {
+            "example": 5001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "isAnalysisFinished": {
+            "example": true,
+            "type": "boolean"
+          },
+          "liveAnalysing": {
+            "example": false,
+            "type": "boolean"
+          },
+          "matchId": {
+            "example": 5001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "round": {
+            "$ref": "#/components/schemas/matchesRound"
+          },
+          "season": {
+            "$ref": "#/components/schemas/matchesMatchSeason"
+          },
+          "seasonId": {
+            "example": 456,
+            "format": "int32",
+            "type": "integer"
+          },
+          "startTime": {
+            "example": "2025-01-15T18:00:00+03:00",
+            "type": "string"
+          },
+          "teamId": {
+            "example": 789,
+            "format": "int32",
+            "type": "integer"
+          },
+          "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "venue": {
+            "example": "King Fahd International Stadium",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchEvent": {
+        "properties": {
+          "attackDirection": {
+            "example": "LEFT_TO_RIGHT",
+            "type": "string"
+          },
+          "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "eventPeriod": {
+            "example": "FIRST_HALF",
+            "type": "string"
+          },
+          "eventTime": {
+            "example": 23,
+            "format": "int32",
+            "type": "integer"
+          },
+          "eventTypes": {
+            "items": {
+              "$ref": "#/components/schemas/matchesEventType"
+            },
+            "type": "array"
+          },
+          "id": {
+            "example": 10001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchEventId": {
+            "example": 10001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchId": {
+            "example": 5001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "playerId": {
+            "example": 1001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "teamId": {
+            "example": 789,
+            "format": "int32",
+            "type": "integer"
+          },
+          "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "x": {
+            "example": 45.2,
+            "format": "double",
+            "type": "number"
+          },
+          "y": {
+            "example": 62.8,
+            "format": "double",
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchEventsData": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/matchesMatchEvent"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "example": 10,
+            "format": "int32",
+            "type": "integer"
+          },
+          "page": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "example": 495,
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "example": 50,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchFormation": {
+        "properties": {
+          "changedTime": {
+            "example": 0,
+            "format": "int32",
+            "type": "integer"
+          },
+          "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "eventPeriod": {
+            "example": "FIRST_HALF",
+            "type": "string"
+          },
+          "formation": {
+            "items": {
+              "$ref": "#/components/schemas/matchesFormationPosition"
+            },
+            "type": "array"
+          },
+          "id": {
+            "example": 9001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchFormationId": {
+            "example": 9001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchId": {
+            "example": 5001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "teamId": {
+            "example": 789,
+            "format": "int32",
+            "type": "integer"
+          },
+          "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchFormationsData": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/matchesMatchFormation"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "example": 10,
+            "format": "int32",
+            "type": "integer"
+          },
+          "page": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "example": 2,
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchLineup": {
+        "properties": {
+          "backNumber": {
+            "example": "10",
+            "type": "string"
+          },
+          "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "example": 8001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "isStartingLineup": {
+            "example": true,
+            "type": "boolean"
+          },
+          "matchId": {
+            "example": 5001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchLineupId": {
+            "example": 8001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "playerId": {
+            "example": 1001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "playerLastName": {
+            "example": "Al-Dawsari",
+            "type": "string"
+          },
+          "playerName": {
+            "example": "Mohammed",
+            "type": "string"
+          },
+          "position": {
+            "$ref": "#/components/schemas/matchesPosition"
+          },
+          "positionName": {
+            "example": "Left Winger",
+            "type": "string"
+          },
+          "teamId": {
+            "example": 789,
+            "format": "int32",
+            "type": "integer"
+          },
+          "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchLineupsData": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/matchesMatchLineup"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "example": 20,
+            "format": "int32",
+            "type": "integer"
+          },
+          "page": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "example": 22,
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "example": 2,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchPlayerStats": {
+        "properties": {
+          "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "example": 12001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchId": {
+            "example": 5001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "playerId": {
+            "example": 1001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "stats": {
+            "$ref": "#/components/schemas/matchesPlayerStatsData"
+          },
+          "teamId": {
+            "example": 789,
+            "format": "int32",
+            "type": "integer"
+          },
+          "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchPlayerStatsData": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/matchesMatchPlayerStats"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "example": 20,
+            "format": "int32",
+            "type": "integer"
+          },
+          "page": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "example": 22,
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "example": 2,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchSeason": {
+        "properties": {
+          "endYear": {
+            "example": 2025,
+            "format": "int32",
+            "type": "integer"
+          },
+          "id": {
+            "example": 456,
+            "format": "int32",
+            "type": "integer"
+          },
+          "leagueId": {
+            "example": 123,
+            "format": "int32",
+            "type": "integer"
+          },
+          "name": {
+            "example": "2024/2025",
+            "type": "string"
+          },
+          "seasonGroupName": {
+            "example": "Regular Season",
+            "type": "string"
+          },
+          "startYear": {
+            "example": 2024,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchSequenceData": {
+        "properties": {
+          "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "endTime": {
+            "example": 145,
+            "format": "int32",
+            "type": "integer"
+          },
+          "eventIds": {
+            "example": [
+              "10001",
+              "10002"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "eventPeriod": {
+            "example": "FIRST_HALF",
+            "type": "string"
+          },
+          "id": {
+            "example": 13001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchId": {
+            "example": 5001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "startTime": {
+            "example": 120,
+            "format": "int32",
+            "type": "integer"
+          },
+          "teamId": {
+            "example": 789,
+            "format": "int32",
+            "type": "integer"
+          },
+          "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchSequenceDataList": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/matchesMatchSequenceData"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "example": 10,
+            "format": "int32",
+            "type": "integer"
+          },
+          "page": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "example": 195,
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "example": 20,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchTeam": {
+        "properties": {
+          "id": {
+            "example": 789,
+            "format": "int32",
+            "type": "integer"
+          },
+          "isoCountryCode": {
+            "example": "SA",
+            "type": "string"
+          },
+          "name": {
+            "example": "Al-Hilal",
+            "type": "string"
+          },
+          "nameEn": {
+            "example": "Al-Hilal FC",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchTeamStats": {
+        "properties": {
+          "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "example": 11001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchId": {
+            "example": 5001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "stats": {
+            "$ref": "#/components/schemas/matchesTeamStatsData"
+          },
+          "teamId": {
+            "example": 789,
+            "format": "int32",
+            "type": "integer"
+          },
+          "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchTeamStatsData": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/matchesMatchTeamStats"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "example": 10,
+            "format": "int32",
+            "type": "integer"
+          },
+          "page": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "example": 2,
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesMatchesData": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/matchesMatch"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "example": 10,
+            "format": "int32",
+            "type": "integer"
+          },
+          "page": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "example": 95,
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "example": 10,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesPlayerStatsData": {
+        "properties": {
+          "playTime": {
+            "example": 90,
+            "format": "int32",
+            "type": "integer"
+          },
+          "rating": {
+            "example": 8.5,
+            "format": "double",
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "matchesPosition": {
+        "properties": {
+          "x": {
+            "example": 25.5,
+            "format": "double",
+            "type": "number"
+          },
+          "y": {
+            "example": 80.3,
+            "format": "double",
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "matchesRound": {
+        "properties": {
+          "id": {
+            "example": 12,
+            "format": "int32",
+            "type": "integer"
+          },
+          "name": {
+            "example": "Round 12",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "matchesTeamStatsData": {
+        "properties": {
+          "foul": {
+            "example": 12,
+            "format": "int32",
+            "type": "integer"
+          },
+          "goal": {
+            "example": 3,
+            "format": "int32",
+            "type": "integer"
+          },
+          "pass": {
+            "example": 542,
+            "format": "int32",
+            "type": "integer"
+          },
+          "possession": {
+            "example": 62.5,
+            "format": "double",
+            "type": "number"
+          },
+          "redCard": {
+            "example": 0,
+            "format": "int32",
+            "type": "integer"
+          },
+          "yellowCard": {
+            "example": 2,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "matchesVideoStreamData": {
+        "properties": {
+          "streamingUrl": {
+            "example": "https://stream.example.com/match/5001/live",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "matchesVideoTimingData": {
+        "properties": {
+          "count": {
+            "example": 2,
+            "format": "int32",
+            "type": "integer"
+          },
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/matchesVideoTimingPeriod"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "matchesVideoTimingPeriod": {
+        "properties": {
+          "matchEndTime": {
+            "example": 2700,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchId": {
+            "example": 5001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchStartTime": {
+            "example": 0,
+            "format": "int32",
+            "type": "integer"
+          },
+          "periodName": {
+            "example": "First Half",
+            "type": "string"
+          },
+          "periodOfficialDuration": {
+            "example": 45,
+            "format": "int32",
+            "type": "integer"
+          },
+          "periodOrder": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "videoEndTime": {
+            "example": 2700,
+            "format": "int32",
+            "type": "integer"
+          },
+          "videoId": {
+            "example": 7001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "videoStartTime": {
+            "example": 0,
+            "format": "int32",
+            "type": "integer"
+          },
+          "videoUrl": {
+            "example": "https://example.com/video/match_5001_half1.mp4",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "playersGetPlayerByIdResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/playersPlayer"
+          },
+          "message": {
+            "example": "Player details fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "playersGetPlayersResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/playersPlayersData"
+          },
+          "message": {
+            "example": "All Players fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "playersPlayer": {
+        "properties": {
+          "backNumber": {
+            "example": "10",
+            "type": "string"
+          },
+          "birthDate": {
+            "example": "1991-08-14",
+            "type": "string"
+          },
+          "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "example": 1001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "mainPosition": {
+            "example": "LW",
+            "type": "string"
+          },
+          "playerId": {
+            "example": 1001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "playerLastName": {
+            "example": "Al-Dawsari",
+            "type": "string"
+          },
+          "playerLastNameEn": {
+            "example": "Al-Dawsari",
+            "type": "string"
+          },
+          "playerName": {
+            "example": "Mohammed",
+            "type": "string"
+          },
+          "playerNameEn": {
+            "example": "Mohammed",
+            "type": "string"
+          },
+          "playerRole": {
+            "example": "Forward",
+            "type": "string"
+          },
+          "rootPlayerId": {
+            "example": 1000,
+            "format": "int32",
+            "type": "integer"
+          },
+          "teamId": {
+            "example": 789,
+            "format": "int32",
+            "type": "integer"
+          },
+          "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "playersPlayersData": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/playersPlayer"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "example": 10,
+            "format": "int32",
+            "type": "integer"
+          },
+          "page": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "example": 147,
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "example": 15,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "protobufAny": {
+        "additionalProperties": {},
+        "properties": {
+          "@type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "rpcStatus": {
+        "properties": {
+          "code": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "details": {
+            "items": {
+              "$ref": "#/components/schemas/protobufAny"
+            },
+            "type": "array"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "schedule_matchesFindAllResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/schedule_matchesScheduleMatchesData"
+          },
+          "message": {
+            "example": "Schedule matches fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "schedule_matchesScheduleMatch": {
+        "properties": {
+          "awayTeamName": {
+            "example": "Al-Nassr",
+            "type": "string"
+          },
+          "competitionId": {
+            "example": "comp-123",
+            "type": "string"
+          },
+          "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "homeTeamName": {
+            "example": "Al-Hilal",
+            "type": "string"
+          },
+          "id": {
+            "example": 7001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchDate": {
+            "example": "2025-01-15",
+            "type": "string"
+          },
+          "matchId": {
+            "example": 5001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "matchTime": {
+            "example": "18:00:00",
+            "type": "string"
+          },
+          "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "venue": {
+            "example": "King Fahd International Stadium",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "schedule_matchesScheduleMatchesData": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/schedule_matchesScheduleMatch"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "example": 10,
+            "format": "int32",
+            "type": "integer"
+          },
+          "page": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "example": 76,
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "example": 8,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "seasonsGetSeasonByIdResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/seasonsSeason"
+          },
+          "message": {
+            "example": "Season details fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "seasonsGetSeasonsResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/seasonsSeasonsData"
+          },
+          "message": {
+            "example": "All Seasons fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "seasonsSeason": {
+        "properties": {
+          "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "example": 456,
+            "format": "int32",
+            "type": "integer"
+          },
+          "leagueId": {
+            "example": 123,
+            "format": "int32",
+            "type": "integer"
+          },
+          "seasonGroupName": {
+            "example": "Regular Season",
+            "type": "string"
+          },
+          "seasonId": {
+            "example": 456,
+            "format": "int32",
+            "type": "integer"
+          },
+          "seasonName": {
+            "example": "2024/2025",
+            "type": "string"
+          },
+          "teamIds": {
+            "example": [
+              "789",
+              "790"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "seasonsSeasonsData": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/seasonsSeason"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "example": 10,
+            "format": "int32",
+            "type": "integer"
+          },
+          "page": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "example": 47,
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "example": 5,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "teamsGetTeamsByIdResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/teamsTeam"
+          },
+          "message": {
+            "example": "Team details fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "teamsGetTeamsResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/teamsTeamsData"
+          },
+          "message": {
+            "example": "All Teams fetched successfully",
+            "type": "string"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "teamsTeam": {
+        "properties": {
+          "createdAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "example": 789,
+            "format": "int32",
+            "type": "integer"
+          },
+          "isoCountryCode": {
+            "example": "SA",
+            "type": "string"
+          },
+          "name": {
+            "example": "Al-Hilal",
+            "type": "string"
+          },
+          "nameEn": {
+            "example": "Al-Hilal FC",
+            "type": "string"
+          },
+          "playerIds": {
+            "example": [
+              "1001",
+              "1002"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "seasonId": {
+            "example": 456,
+            "format": "int32",
+            "type": "integer"
+          },
+          "teamId": {
+            "example": 789,
+            "format": "int32",
+            "type": "integer"
+          },
+          "updatedAt": {
+            "example": "2025-09-15T09:01:03.596Z",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "teamsTeamsData": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/teamsTeam"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "example": 10,
+            "format": "int32",
+            "type": "integer"
+          },
+          "page": {
+            "example": 1,
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "example": 38,
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "example": 4,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "v1OrderByDir": {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "type": "string"
       }
     }
   },
@@ -167,17 +1826,27 @@
   },
   "openapi": "3.0.3",
   "paths": {
-    "/leagues": {
+    "/api/match-start-list/{matchId}": {
       "get": {
-        "operationId": "LeaguesService_ListLeagues",
+        "operationId": "MatchStartListService_FindByMatchId",
         "parameters": [
+          {
+            "description": "Match ID",
+            "in": "path",
+            "name": "matchId",
+            "required": true,
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
           {
             "description": "Number of items per page",
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
             }
           },
           {
@@ -189,7 +1858,7 @@
             }
           },
           {
-            "description": "Get result in ascending or descending order",
+            "description": "Get result in ascending order",
             "in": "query",
             "name": "orderByDir",
             "schema": {
@@ -205,8 +1874,8 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
             }
           }
         ],
@@ -215,7 +1884,53 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/v1ListLeaguesResponse"
+                  "$ref": "#/components/schemas/match_start_listFindByMatchIdResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        },
+        "summary": "Get match start list by matchId with pagination"
+      }
+    },
+    "/api/match-videos/competition/{competitionId}/{matchId}": {
+      "get": {
+        "operationId": "MatchVideosService_GetMatchByCompetition",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "competitionId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "matchId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/match_videosGetMatchByCompetitionResponse"
                 }
               }
             },
@@ -234,17 +1949,176 @@
         }
       }
     },
-    "/leagues/{id}": {
+    "/api/schedule-matches": {
       "get": {
-        "operationId": "LeaguesService_GetLeague",
+        "operationId": "ScheduleMatchesService_FindAll",
+        "parameters": [
+          {
+            "description": "Compition Id",
+            "in": "query",
+            "name": "compitionId",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "End date",
+            "in": "query",
+            "name": "endDate",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Sort result by specific key",
+            "in": "query",
+            "name": "orderBy",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get result in ascending order",
+            "in": "query",
+            "name": "orderByDir",
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Start date",
+            "in": "query",
+            "name": "startDate",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/schedule_matchesFindAllResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        },
+        "summary": "Get a list of schedule matches with pagination"
+      }
+    },
+    "/api/vendor-apis/leagues": {
+      "get": {
+        "operationId": "LeaguesService_GetLeagues",
+        "parameters": [
+          {
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Sort result by specific key",
+            "in": "query",
+            "name": "orderBy",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get result in ascending order",
+            "in": "query",
+            "name": "orderByDir",
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/leaguesGetLeaguesResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        }
+      }
+    },
+    "/api/vendor-apis/leagues/{id}": {
+      "get": {
+        "operationId": "LeaguesService_GetLeagueById",
         "parameters": [
           {
             "in": "path",
             "name": "id",
             "required": true,
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
             }
           }
         ],
@@ -253,7 +2127,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/v1GetLeagueResponse"
+                  "$ref": "#/components/schemas/leaguesGetLeagueByIdResponse"
                 }
               }
             },
@@ -272,73 +2146,17 @@
         }
       }
     },
-    "/matches": {
+    "/api/vendor-apis/matches": {
       "get": {
-        "operationId": "MatchesService_ListMatches",
+        "operationId": "MatchesService_GetMatches",
         "parameters": [
           {
-            "description": "Number of items per page",
+            "description": "Filter records by provided Bepro match id",
             "in": "query",
-            "name": "limit",
+            "name": "beproMatchId",
             "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Sort result by specific key",
-            "in": "query",
-            "name": "orderBy",
-            "schema": {
+              "format": "int64",
               "type": "string"
-            }
-          },
-          {
-            "description": "Get result in ascending or descending order",
-            "in": "query",
-            "name": "orderByDir",
-            "schema": {
-              "enum": [
-                "asc",
-                "desc"
-              ],
-              "type": "string"
-            }
-          },
-          {
-            "description": "Page number",
-            "in": "query",
-            "name": "page",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided match ID",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by player ID",
-            "in": "query",
-            "name": "playerId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by team ID",
-            "in": "query",
-            "name": "teamId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
             }
           },
           {
@@ -346,8 +2164,82 @@
             "in": "query",
             "name": "leagueId",
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided match id",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Sort result by specific key",
+            "in": "query",
+            "name": "orderBy",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get result in ascending order",
+            "in": "query",
+            "name": "orderByDir",
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get matches by player ID",
+            "in": "query",
+            "name": "playerId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided SAFF match id",
+            "in": "query",
+            "name": "saffMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get matches by SAFF player ID",
+            "in": "query",
+            "name": "saffPlayerId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
             }
           },
           {
@@ -355,429 +2247,17 @@
             "in": "query",
             "name": "seasonId",
             "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided SAFF match ID",
-            "in": "query",
-            "name": "saffMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by SAFF player ID",
-            "in": "query",
-            "name": "saffPlayerId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided external match ID (e.g. from Bepro)",
-            "in": "query",
-            "name": "externalMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            },
-            "description": "A successful response."
-          },
-          "default": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/rpcStatus"
-                }
-              }
-            },
-            "description": "An unexpected error response."
-          }
-        }
-      }
-    },
-    "/matches/events": {
-      "get": {
-        "operationId": "MatchesService_ListMatchEvents",
-        "parameters": [
-          {
-            "description": "Number of items per page",
-            "in": "query",
-            "name": "limit",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Sort result by specific key",
-            "in": "query",
-            "name": "orderBy",
-            "schema": {
+              "format": "int64",
               "type": "string"
             }
           },
           {
-            "description": "Get result in ascending or descending order",
-            "in": "query",
-            "name": "orderByDir",
-            "schema": {
-              "enum": [
-                "asc",
-                "desc"
-              ],
-              "type": "string"
-            }
-          },
-          {
-            "description": "Page number",
-            "in": "query",
-            "name": "page",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided SAFF match ID",
-            "in": "query",
-            "name": "saffMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided external match ID (e.g. from Bepro)",
-            "in": "query",
-            "name": "externalMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            },
-            "description": "A successful response."
-          },
-          "default": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/rpcStatus"
-                }
-              }
-            },
-            "description": "An unexpected error response."
-          }
-        }
-      }
-    },
-    "/matches/formations": {
-      "get": {
-        "operationId": "MatchesService_ListMatchFormations",
-        "parameters": [
-          {
-            "description": "Number of items per page",
-            "in": "query",
-            "name": "limit",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Sort result by specific key",
-            "in": "query",
-            "name": "orderBy",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "Get result in ascending or descending order",
-            "in": "query",
-            "name": "orderByDir",
-            "schema": {
-              "enum": [
-                "asc",
-                "desc"
-              ],
-              "type": "string"
-            }
-          },
-          {
-            "description": "Page number",
-            "in": "query",
-            "name": "page",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided match ID",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided SAFF match ID",
-            "in": "query",
-            "name": "saffMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided external match ID (e.g. from Bepro)",
-            "in": "query",
-            "name": "externalMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            },
-            "description": "A successful response."
-          },
-          "default": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/rpcStatus"
-                }
-              }
-            },
-            "description": "An unexpected error response."
-          }
-        }
-      }
-    },
-    "/matches/lineups": {
-      "get": {
-        "operationId": "MatchesService_ListMatchLineups",
-        "parameters": [
-          {
-            "description": "Number of items per page",
-            "in": "query",
-            "name": "limit",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Sort result by specific key",
-            "in": "query",
-            "name": "orderBy",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "Get result in ascending or descending order",
-            "in": "query",
-            "name": "orderByDir",
-            "schema": {
-              "enum": [
-                "asc",
-                "desc"
-              ],
-              "type": "string"
-            }
-          },
-          {
-            "description": "Page number",
-            "in": "query",
-            "name": "page",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided match ID",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided SAFF match ID",
-            "in": "query",
-            "name": "saffMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided external match ID (e.g. from Bepro)",
-            "in": "query",
-            "name": "externalMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            },
-            "description": "A successful response."
-          },
-          "default": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/rpcStatus"
-                }
-              }
-            },
-            "description": "An unexpected error response."
-          }
-        }
-      }
-    },
-    "/matches/player_stats": {
-      "get": {
-        "operationId": "MatchesService_ListMatchPlayerStats",
-        "parameters": [
-          {
-            "description": "Number of items per page",
-            "in": "query",
-            "name": "limit",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Sort result by specific key",
-            "in": "query",
-            "name": "orderBy",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "Get result in ascending or descending order",
-            "in": "query",
-            "name": "orderByDir",
-            "schema": {
-              "enum": [
-                "asc",
-                "desc"
-              ],
-              "type": "string"
-            }
-          },
-          {
-            "description": "Page number",
-            "in": "query",
-            "name": "page",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided match ID",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by player ID",
-            "in": "query",
-            "name": "playerId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by team ID",
+            "description": "Get matches by team ID",
             "in": "query",
             "name": "teamId",
             "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided SAFF match ID",
-            "in": "query",
-            "name": "saffMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by SAFF player ID",
-            "in": "query",
-            "name": "saffPlayerId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided external match ID (e.g. from Bepro)",
-            "in": "query",
-            "name": "externalMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
             }
           }
         ],
@@ -786,7 +2266,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/matchesGetMatchesResponse"
                 }
               }
             },
@@ -805,17 +2285,35 @@
         }
       }
     },
-    "/matches/sequences": {
+    "/api/vendor-apis/matches/events": {
       "get": {
-        "operationId": "MatchesService_ListMatchSequences",
+        "operationId": "MatchesService_GetMatchEventsByMatchId",
         "parameters": [
+          {
+            "description": "Filter records by provided Bepro match id",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
           {
             "description": "Number of items per page",
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided match id",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
             }
           },
           {
@@ -827,7 +2325,7 @@
             }
           },
           {
-            "description": "Get result in ascending or descending order",
+            "description": "Get result in ascending order",
             "in": "query",
             "name": "orderByDir",
             "schema": {
@@ -843,130 +2341,18 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided match ID",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided SAFF match ID",
-            "in": "query",
-            "name": "saffMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided external match ID (e.g. from Bepro)",
-            "in": "query",
-            "name": "externalMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            },
-            "description": "A successful response."
-          },
-          "default": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/rpcStatus"
-                }
-              }
-            },
-            "description": "An unexpected error response."
-          }
-        }
-      }
-    },
-    "/matches/team_stats": {
-      "get": {
-        "operationId": "MatchesService_ListMatchTeamStats",
-        "parameters": [
-          {
-            "description": "Number of items per page",
-            "in": "query",
-            "name": "limit",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Sort result by specific key",
-            "in": "query",
-            "name": "orderBy",
-            "schema": {
+              "format": "int64",
               "type": "string"
             }
           },
           {
-            "description": "Get result in ascending or descending order",
+            "description": "Filter records by provided SAFF match id",
             "in": "query",
-            "name": "orderByDir",
+            "name": "saffMatchId",
             "schema": {
-              "enum": [
-                "asc",
-                "desc"
-              ],
+              "format": "int64",
               "type": "string"
             }
-          },
-          {
-            "description": "Page number",
-            "in": "query",
-            "name": "page",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided match ID",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided SAFF match ID",
-            "in": "query",
-            "name": "saffMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided external match ID (e.g. from Bepro)",
-            "in": "query",
-            "name": "externalMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
           }
         ],
         "responses": {
@@ -974,7 +2360,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/matchesGetMatchEventsByMatchIdResponse"
                 }
               }
             },
@@ -993,129 +2379,17 @@
         }
       }
     },
-    "/matches/videos/timings": {
+    "/api/vendor-apis/matches/events/{id}": {
       "get": {
-        "operationId": "MatchesService_GetMatchVideoTiming",
-        "parameters": [
-          {
-            "description": "Get the video timing by match ID",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Get the video timing by SAFF match ID",
-            "in": "query",
-            "name": "saffMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Get the video timing by external match ID (e.g. from Bepro)",
-            "in": "query",
-            "name": "externalMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            },
-            "description": "A successful response."
-          },
-          "default": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/rpcStatus"
-                }
-              }
-            },
-            "description": "An unexpected error response."
-          }
-        }
-      }
-    },
-    "/matches/videos/urls": {
-      "get": {
-        "operationId": "MatchesService_GetMatchVideoURLs",
-        "parameters": [
-          {
-            "description": "Get the video timing by match ID",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Get the video timing by SAFF match ID",
-            "in": "query",
-            "name": "saffMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Get the video timing by external match ID (e.g. from Bepro)",
-            "in": "query",
-            "name": "externalMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            },
-            "description": "A successful response."
-          },
-          "default": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/rpcStatus"
-                }
-              }
-            },
-            "description": "An unexpected error response."
-          }
-        }
-      }
-    },
-    "/matches/{id}": {
-      "get": {
-        "operationId": "MatchesService_GetMatch",
+        "operationId": "MatchesService_GetMatchEventsByEventId",
         "parameters": [
           {
             "in": "path",
             "name": "id",
             "required": true,
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
             }
           }
         ],
@@ -1124,7 +2398,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/matchesGetMatchEventsByEventIdResponse"
                 }
               }
             },
@@ -1143,17 +2417,35 @@
         }
       }
     },
-    "/players": {
+    "/api/vendor-apis/matches/formation": {
       "get": {
-        "operationId": "PlayersService_ListPlayers",
+        "operationId": "MatchesService_GetMatchFormationByMatchId",
         "parameters": [
+          {
+            "description": "Filter records by provided Bepro match id",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
           {
             "description": "Number of items per page",
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided match id",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
             }
           },
           {
@@ -1165,7 +2457,7 @@
             }
           },
           {
-            "description": "Get result in ascending or descending order",
+            "description": "Get result in ascending order",
             "in": "query",
             "name": "orderByDir",
             "schema": {
@@ -1181,8 +2473,613 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided SAFF match id",
+            "in": "query",
+            "name": "saffMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/matchesGetMatchFormationByMatchIdResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        }
+      }
+    },
+    "/api/vendor-apis/matches/lineups": {
+      "get": {
+        "operationId": "MatchesService_GetMatchLineupsByMatchId",
+        "parameters": [
+          {
+            "description": "Filter records by provided Bepro match id",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided match id",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Sort result by specific key",
+            "in": "query",
+            "name": "orderBy",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get result in ascending order",
+            "in": "query",
+            "name": "orderByDir",
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided SAFF match id",
+            "in": "query",
+            "name": "saffMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/matchesGetMatchLineupsByMatchIdResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        }
+      }
+    },
+    "/api/vendor-apis/matches/player_stats": {
+      "get": {
+        "operationId": "MatchesService_GetMatchPlayerStatsByMatchId",
+        "parameters": [
+          {
+            "description": "Filter records by provided Bepro match id",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided match id",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Sort result by specific key",
+            "in": "query",
+            "name": "orderBy",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get result in ascending order",
+            "in": "query",
+            "name": "orderByDir",
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by player id",
+            "in": "query",
+            "name": "playerId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided SAFF match id",
+            "in": "query",
+            "name": "saffMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by SAFF player id",
+            "in": "query",
+            "name": "saffPlayerId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by team id",
+            "in": "query",
+            "name": "teamId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/matchesGetMatchPlayerStatsByMatchIdResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        }
+      }
+    },
+    "/api/vendor-apis/matches/sequence_data": {
+      "get": {
+        "operationId": "MatchesService_GetMatchSequenceDataByMatchId",
+        "parameters": [
+          {
+            "description": "Filter records by provided Bepro match id",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided match id",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Sort result by specific key",
+            "in": "query",
+            "name": "orderBy",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get result in ascending order",
+            "in": "query",
+            "name": "orderByDir",
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided SAFF match id",
+            "in": "query",
+            "name": "saffMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/matchesGetMatchSequenceDataByMatchIdResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        }
+      }
+    },
+    "/api/vendor-apis/matches/team_stats": {
+      "get": {
+        "operationId": "MatchesService_GetMatchTeamStatsByMatchId",
+        "parameters": [
+          {
+            "description": "Filter records by provided Bepro match id",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided match id",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Sort result by specific key",
+            "in": "query",
+            "name": "orderBy",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get result in ascending order",
+            "in": "query",
+            "name": "orderByDir",
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided SAFF match id",
+            "in": "query",
+            "name": "saffMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/matchesGetMatchTeamStatsByMatchIdResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        }
+      }
+    },
+    "/api/vendor-apis/matches/video-timing": {
+      "get": {
+        "operationId": "MatchesService_GetVideoTiming",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "saffMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/matchesGetVideoTimingResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        }
+      }
+    },
+    "/api/vendor-apis/matches/video/stream/{saffMatchId}": {
+      "get": {
+        "operationId": "MatchesService_Get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "saffMatchId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/matchesGetResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        }
+      }
+    },
+    "/api/vendor-apis/matches/{id}": {
+      "get": {
+        "operationId": "MatchesService_GetMatchById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided Bepro match id",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided match id",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided SAFF match id",
+            "in": "query",
+            "name": "saffMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/matchesGetMatchByIdResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        }
+      }
+    },
+    "/api/vendor-apis/players": {
+      "get": {
+        "operationId": "PlayersService_GetPlayers",
+        "parameters": [
+          {
+            "description": "Filter records by provided Bepro player id",
+            "in": "query",
+            "name": "beproPlayerId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
             }
           },
           {
@@ -1190,8 +3087,17 @@
             "in": "query",
             "name": "leagueId",
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "format": "int64",
+              "type": "string"
             }
           },
           {
@@ -1199,8 +3105,46 @@
             "in": "query",
             "name": "matchId",
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Sort result by specific key",
+            "in": "query",
+            "name": "orderBy",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get result in ascending order",
+            "in": "query",
+            "name": "orderByDir",
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided player id",
+            "in": "query",
+            "name": "playerId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
             }
           },
           {
@@ -1208,26 +3152,17 @@
             "in": "query",
             "name": "saffMatchId",
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
             }
           },
           {
-            "description": "Filter records by SAFF player ID",
+            "description": "Filter records by provided SAFF player id",
             "in": "query",
             "name": "saffPlayerId",
             "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Get player external player id, e.g. Bepro ID",
-            "in": "query",
-            "name": "externalPlayerId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
             }
           }
         ],
@@ -1236,7 +3171,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/playersGetPlayersResponse"
                 }
               }
             },
@@ -1255,17 +3190,71 @@
         }
       }
     },
-    "/players/{id}": {
+    "/api/vendor-apis/players/{id}": {
       "get": {
-        "operationId": "PlayersService_GetPlayer",
+        "operationId": "PlayersService_GetPlayerById",
         "parameters": [
           {
             "in": "path",
             "name": "id",
             "required": true,
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided Bepro player id",
+            "in": "query",
+            "name": "beproPlayerId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get players by league ID",
+            "in": "query",
+            "name": "leagueId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get players by match ID",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided player id",
+            "in": "query",
+            "name": "playerId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get players by SAFF match ID",
+            "in": "query",
+            "name": "saffMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided SAFF player id",
+            "in": "query",
+            "name": "saffPlayerId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
             }
           }
         ],
@@ -1274,7 +3263,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/playersGetPlayerByIdResponse"
                 }
               }
             },
@@ -1293,131 +3282,26 @@
         }
       }
     },
-    "/seasons": {
+    "/api/vendor-apis/seasons": {
       "get": {
-        "operationId": "SeasonsService_ListSeasons",
+        "operationId": "SeasonsService_GetSeasons",
         "parameters": [
-          {
-            "description": "Number of items per page",
-            "in": "query",
-            "name": "limit",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Sort result by specific key",
-            "in": "query",
-            "name": "orderBy",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "Get result in ascending or descending order",
-            "in": "query",
-            "name": "orderByDir",
-            "schema": {
-              "enum": [
-                "asc",
-                "desc"
-              ],
-              "type": "string"
-            }
-          },
-          {
-            "description": "Page number",
-            "in": "query",
-            "name": "page",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
           {
             "description": "Get seasons by league ID",
             "in": "query",
             "name": "leagueId",
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            },
-            "description": "A successful response."
           },
-          "default": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/rpcStatus"
-                }
-              }
-            },
-            "description": "An unexpected error response."
-          }
-        }
-      }
-    },
-    "/seasons/{id}": {
-      "get": {
-        "operationId": "SeasonsService_GetSeason",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            },
-            "description": "A successful response."
-          },
-          "default": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/rpcStatus"
-                }
-              }
-            },
-            "description": "An unexpected error response."
-          }
-        }
-      }
-    },
-    "/teams": {
-      "get": {
-        "operationId": "TeamsService_ListTeams",
-        "parameters": [
           {
             "description": "Number of items per page",
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
             }
           },
           {
@@ -1429,7 +3313,7 @@
             }
           },
           {
-            "description": "Get result in ascending or descending order",
+            "description": "Get result in ascending order",
             "in": "query",
             "name": "orderByDir",
             "schema": {
@@ -1445,8 +3329,113 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/seasonsGetSeasonsResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        }
+      }
+    },
+    "/api/vendor-apis/seasons/{id}": {
+      "get": {
+        "operationId": "SeasonsService_GetSeasonById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/seasonsGetSeasonByIdResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        }
+      }
+    },
+    "/api/vendor-apis/teams": {
+      "get": {
+        "operationId": "TeamsService_GetTeams",
+        "parameters": [
+          {
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Sort result by specific key",
+            "in": "query",
+            "name": "orderBy",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Get result in ascending order",
+            "in": "query",
+            "name": "orderByDir",
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "format": "int64",
+              "type": "string"
             }
           },
           {
@@ -1454,8 +3443,8 @@
             "in": "query",
             "name": "seasonId",
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
             }
           }
         ],
@@ -1464,7 +3453,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/teamsGetTeamsResponse"
                 }
               }
             },
@@ -1483,17 +3472,17 @@
         }
       }
     },
-    "/teams/{id}": {
+    "/api/vendor-apis/teams/{id}": {
       "get": {
-        "operationId": "TeamsService_GetTeam",
+        "operationId": "TeamsService_GetTeamsById",
         "parameters": [
           {
             "in": "path",
             "name": "id",
             "required": true,
             "schema": {
-              "format": "int32",
-              "type": "integer"
+              "format": "int64",
+              "type": "string"
             }
           }
         ],
@@ -1502,7 +3491,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/teamsGetTeamsByIdResponse"
                 }
               }
             },

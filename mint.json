@@ -13,7 +13,7 @@
     "dark": "#FF2222",
     "background": {
       "light": "#ececec",
-      "dark": "#171717"
+      "dark": "#100216"
     },
     "anchors": {
       "from": "#FF2222",
@@ -21,7 +21,7 @@
     }
   },
   "api": {
-    "baseUrl": "https://apiv2.intelltracking.com",
+    "baseUrl": "https://saff-api-972411116233.me-central2.run.app",
     "auth": {
       "method": "bearer"
     }
@@ -57,6 +57,7 @@
               "group": "General",
               "pages": [
                 "reference/api/matches/list-matches",
+                "reference/api/matches/get-match",
                 "reference/api/matches/formations/get-match-formation",
                 "reference/api/matches/lineups/get-match-lineup",
                 "reference/api/matches/player-stats/list-player-stats",
@@ -66,7 +67,7 @@
             {
               "group": "Analysis",
               "pages": [
-                "reference/api/matches/events/get-match-events",
+                "reference/api/matches/events/list-match-events",
                 "reference/api/matches/sequences/get-match-sequences"
               ]
             },
@@ -82,35 +83,29 @@
         {
           "group": "Players",
           "pages": [
-            "reference/api/players/get-player",
             "reference/api/players/list-players",
-            "reference/api/players/list-player-stats",
-            "reference/api/players/list-matches"
+            "reference/api/players/get-player"
           ]
         },
         {
           "group": "Teams",
           "pages": [
-            "reference/api/teams/get-team",
             "reference/api/teams/list-teams",
-            "reference/api/teams/list-team-stats",
-            "reference/api/teams/list-matches"
+            "reference/api/teams/get-team"
           ]
         },
         {
           "group": "Leagues",
           "pages": [
-            "reference/api/leagues/get-league",
             "reference/api/leagues/list-leagues",
-            "reference/api/leagues/list-matches"
+            "reference/api/leagues/get-league"
           ]
         },
         {
           "group": "Seasons",
           "pages": [
-            "reference/api/seasons/get-season",
             "reference/api/seasons/list-seasons",
-            "reference/api/seasons/list-matches"
+            "reference/api/seasons/get-season"
           ]
         }
       ]
