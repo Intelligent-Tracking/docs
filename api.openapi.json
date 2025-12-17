@@ -1836,8 +1836,8 @@
             "name": "matchId",
             "required": true,
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -1845,8 +1845,8 @@
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -1874,8 +1874,8 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -1974,8 +1974,8 @@
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2003,8 +2003,8 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2050,8 +2050,8 @@
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2079,8 +2079,8 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -2117,8 +2117,8 @@
             "name": "id",
             "required": true,
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -2151,39 +2151,12 @@
         "operationId": "MatchesService_GetMatches",
         "parameters": [
           {
-            "description": "Filter records by provided Bepro match id",
-            "in": "query",
-            "name": "beproMatchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Get matches by league ID",
-            "in": "query",
-            "name": "leagueId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
             "description": "Number of items per page",
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Filter records by provided match id",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2211,26 +2184,17 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
-            "description": "Get matches by player ID",
-            "in": "query",
-            "name": "playerId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Filter records by provided SAFF match id",
+            "description": "Filter records by provided SAFF match ID",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2238,8 +2202,17 @@
             "in": "query",
             "name": "saffPlayerId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Get matches by league ID",
+            "in": "query",
+            "name": "leagueId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2247,8 +2220,35 @@
             "in": "query",
             "name": "seasonId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided match ID",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided Bepro match ID",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Get matches by player ID",
+            "in": "query",
+            "name": "playerId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2256,8 +2256,8 @@
             "in": "query",
             "name": "teamId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -2290,30 +2290,21 @@
         "operationId": "MatchesService_GetMatchEventsByMatchId",
         "parameters": [
           {
-            "description": "Filter records by provided Bepro match id",
-            "in": "query",
-            "name": "beproMatchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
             "description": "Number of items per page",
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
-            "description": "Filter records by provided match id",
+            "description": "Filter records by provided match ID",
             "in": "query",
             "name": "matchId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2337,21 +2328,30 @@
             }
           },
           {
+            "description": "Filter records by provided SAFF match ID",
+            "in": "query",
+            "name": "saffMatchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
             "description": "Page number",
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
-            "description": "Filter records by provided SAFF match id",
+            "description": "Filter records by provided Bepro match ID",
             "in": "query",
-            "name": "saffMatchId",
+            "name": "beproMatchId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -2388,8 +2388,8 @@
             "name": "id",
             "required": true,
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -2422,30 +2422,12 @@
         "operationId": "MatchesService_GetMatchFormationByMatchId",
         "parameters": [
           {
-            "description": "Filter records by provided Bepro match id",
-            "in": "query",
-            "name": "beproMatchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
             "description": "Number of items per page",
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Filter records by provided match id",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2473,17 +2455,35 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
-            "description": "Filter records by provided SAFF match id",
+            "description": "Filter records by provided SAFF match ID",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided match ID",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided Bepro match ID",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -2516,30 +2516,12 @@
         "operationId": "MatchesService_GetMatchLineupsByMatchId",
         "parameters": [
           {
-            "description": "Filter records by provided Bepro match id",
-            "in": "query",
-            "name": "beproMatchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
             "description": "Number of items per page",
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Filter records by provided match id",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2567,17 +2549,35 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
-            "description": "Filter records by provided SAFF match id",
+            "description": "Filter records by provided SAFF match ID",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided match ID",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided Bepro match ID",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -2610,30 +2610,12 @@
         "operationId": "MatchesService_GetMatchPlayerStatsByMatchId",
         "parameters": [
           {
-            "description": "Filter records by provided Bepro match id",
-            "in": "query",
-            "name": "beproMatchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
             "description": "Number of items per page",
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Filter records by provided match id",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2661,26 +2643,17 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
-            "description": "Filter records by player id",
-            "in": "query",
-            "name": "playerId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Filter records by provided SAFF match id",
+            "description": "Filter records by provided SAFF match ID",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2688,8 +2661,35 @@
             "in": "query",
             "name": "saffPlayerId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided match ID",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided Bepro match ID",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by player id",
+            "in": "query",
+            "name": "playerId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2697,8 +2697,8 @@
             "in": "query",
             "name": "teamId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -2731,30 +2731,12 @@
         "operationId": "MatchesService_GetMatchSequenceDataByMatchId",
         "parameters": [
           {
-            "description": "Filter records by provided Bepro match id",
-            "in": "query",
-            "name": "beproMatchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
             "description": "Number of items per page",
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Filter records by provided match id",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2782,17 +2764,35 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
-            "description": "Filter records by provided SAFF match id",
+            "description": "Filter records by provided SAFF match ID",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided match ID",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided Bepro match ID",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -2825,30 +2825,12 @@
         "operationId": "MatchesService_GetMatchTeamStatsByMatchId",
         "parameters": [
           {
-            "description": "Filter records by provided Bepro match id",
-            "in": "query",
-            "name": "beproMatchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
             "description": "Number of items per page",
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Filter records by provided match id",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -2876,17 +2858,35 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
-            "description": "Filter records by provided SAFF match id",
+            "description": "Filter records by provided SAFF match ID",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided match ID",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided Bepro match ID",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -2920,26 +2920,26 @@
         "parameters": [
           {
             "in": "query",
+            "name": "saffMatchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
             "name": "id",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
             "in": "query",
             "name": "matchId",
             "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "saffMatchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -3013,35 +3013,35 @@
             "name": "id",
             "required": true,
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
-            "description": "Filter records by provided Bepro match id",
-            "in": "query",
-            "name": "beproMatchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Filter records by provided match id",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Filter records by provided SAFF match id",
+            "description": "Filter records by provided SAFF match ID",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided match ID",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided Bepro match ID",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -3074,39 +3074,12 @@
         "operationId": "PlayersService_GetPlayers",
         "parameters": [
           {
-            "description": "Filter records by provided Bepro player id",
-            "in": "query",
-            "name": "beproPlayerId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Get players by league ID",
-            "in": "query",
-            "name": "leagueId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
             "description": "Number of items per page",
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Get players by match ID",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -3134,17 +3107,8 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Filter records by provided player id",
-            "in": "query",
-            "name": "playerId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -3152,8 +3116,8 @@
             "in": "query",
             "name": "saffMatchId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -3161,8 +3125,44 @@
             "in": "query",
             "name": "saffPlayerId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Get players by league ID",
+            "in": "query",
+            "name": "leagueId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Get players by match ID",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided player id",
+            "in": "query",
+            "name": "playerId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided Bepro player id",
+            "in": "query",
+            "name": "beproPlayerId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -3199,44 +3199,8 @@
             "name": "id",
             "required": true,
             "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Filter records by provided Bepro player id",
-            "in": "query",
-            "name": "beproPlayerId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Get players by league ID",
-            "in": "query",
-            "name": "leagueId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Get players by match ID",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
-            "description": "Filter records by provided player id",
-            "in": "query",
-            "name": "playerId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -3244,8 +3208,8 @@
             "in": "query",
             "name": "saffMatchId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -3253,8 +3217,44 @@
             "in": "query",
             "name": "saffPlayerId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Get players by league ID",
+            "in": "query",
+            "name": "leagueId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Get players by match ID",
+            "in": "query",
+            "name": "matchId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided player id",
+            "in": "query",
+            "name": "playerId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided Bepro player id",
+            "in": "query",
+            "name": "beproPlayerId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -3287,21 +3287,12 @@
         "operationId": "SeasonsService_GetSeasons",
         "parameters": [
           {
-            "description": "Get seasons by league ID",
-            "in": "query",
-            "name": "leagueId",
-            "schema": {
-              "format": "int64",
-              "type": "string"
-            }
-          },
-          {
             "description": "Number of items per page",
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -3329,8 +3320,17 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Get seasons by league ID",
+            "in": "query",
+            "name": "leagueId",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -3367,8 +3367,8 @@
             "name": "id",
             "required": true,
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -3405,8 +3405,8 @@
             "in": "query",
             "name": "limit",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -3434,8 +3434,8 @@
             "in": "query",
             "name": "page",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           },
           {
@@ -3443,8 +3443,8 @@
             "in": "query",
             "name": "seasonId",
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
@@ -3481,8 +3481,8 @@
             "name": "id",
             "required": true,
             "schema": {
-              "format": "int64",
-              "type": "string"
+              "format": "int32",
+              "type": "integer"
             }
           }
         ],
