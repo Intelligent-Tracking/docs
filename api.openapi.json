@@ -1250,7 +1250,7 @@
       "matchesVideoStreamData": {
         "properties": {
           "streamingUrl": {
-            "example": "https://stream.example.com/match/5001/live",
+            "example": "https://saffplus.sa/en/event/match/qkHQGfJxy3sSpnnOtIrSD",
             "type": "string"
           }
         },
@@ -1264,6 +1264,32 @@
             "type": "integer"
           },
           "data": {
+            "example": [
+              {
+                "matchEndTime": 2886994,
+                "matchId": 202716,
+                "matchStartTime": 0,
+                "periodName": "1st Half",
+                "periodOfficialDuration": 2700000,
+                "periodOrder": 0,
+                "videoEndTime": 4103054,
+                "videoId": 1199131,
+                "videoStartTime": 1216060,
+                "videoUrl": "https://s.bepro11.com/videos-asia-south1/original-cloud/1199131/0251214T223835/file.mp4"
+              },
+              {
+                "matchEndTime": 5715719,
+                "matchId": 202716,
+                "matchStartTime": 2700000,
+                "periodName": "2nd Half",
+                "periodOfficialDuration": 2700000,
+                "periodOrder": 1,
+                "videoEndTime": 7968874,
+                "videoId": 1199131,
+                "videoStartTime": 4953155,
+                "videoUrl": "https://s.bepro11.com/videos-asia-south1/original-cloud/1199131/0251214T223835/file.mp4"
+              }
+            ],
             "items": {
               "$ref": "#/components/schemas/matchesVideoTimingPeriod"
             },
@@ -1275,51 +1301,41 @@
       "matchesVideoTimingPeriod": {
         "properties": {
           "matchEndTime": {
-            "example": 2700,
             "format": "int32",
             "type": "integer"
           },
           "matchId": {
-            "example": 5001,
             "format": "int32",
             "type": "integer"
           },
           "matchStartTime": {
-            "example": 0,
             "format": "int32",
             "type": "integer"
           },
           "periodName": {
-            "example": "First Half",
             "type": "string"
           },
           "periodOfficialDuration": {
-            "example": 45,
             "format": "int32",
             "type": "integer"
           },
           "periodOrder": {
-            "example": 1,
             "format": "int32",
             "type": "integer"
           },
           "videoEndTime": {
-            "example": 2700,
             "format": "int32",
             "type": "integer"
           },
           "videoId": {
-            "example": 7001,
             "format": "int32",
             "type": "integer"
           },
           "videoStartTime": {
-            "example": 0,
             "format": "int32",
             "type": "integer"
           },
           "videoUrl": {
-            "example": "https://example.com/video/match_5001_half1.mp4",
             "type": "string"
           }
         },
