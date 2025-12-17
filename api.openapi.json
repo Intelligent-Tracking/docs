@@ -1404,10 +1404,6 @@
             "example": "Mohammed",
             "type": "string"
           },
-          "playerRole": {
-            "example": "Forward",
-            "type": "string"
-          },
           "rootPlayerId": {
             "example": 1000,
             "format": "int32",
@@ -3012,33 +3008,6 @@
             "in": "path",
             "name": "id",
             "required": true,
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided SAFF match ID",
-            "in": "query",
-            "name": "saffMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided match ID",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided Bepro match ID",
-            "in": "query",
-            "name": "beproMatchId",
             "schema": {
               "format": "int32",
               "type": "integer"
