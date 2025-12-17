@@ -505,6 +505,7 @@
         "properties": {
           "analysisCompletedDatetime": {
             "example": "2025-01-15T20:30:00Z",
+            "format": "date-time",
             "type": "string"
           },
           "awayTeam": {
