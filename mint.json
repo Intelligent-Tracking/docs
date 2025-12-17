@@ -75,7 +75,7 @@
               "group": "Videos",
               "pages": [
                 "reference/api/matches/videos/timings/list-video-timings",
-                "reference/api/matches/videos/urls/get-match-video-urls"
+                "reference/api/matches/videos/urls/get-streaming-url"
               ]
             }
           ]
