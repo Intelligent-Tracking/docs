@@ -21,11 +21,17 @@
       "leaguesGetLeaguesResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/leaguesLeaguesData"
+            "items": {
+              "$ref": "#/components/schemas/leaguesLeague"
+            },
+            "type": "array"
           },
           "message": {
             "example": "All leagues fetched successfully",
             "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
           },
           "statusCode": {
             "example": 200,
@@ -90,55 +96,7 @@
         },
         "type": "object"
       },
-      "leaguesLeaguesData": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/leaguesLeague"
-            },
-            "type": "array"
-          },
-          "limit": {
-            "example": 10,
-            "format": "int32",
-            "type": "integer"
-          },
-          "page": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
-          },
-          "total": {
-            "example": 23,
-            "format": "int32",
-            "type": "integer"
-          },
-          "totalPages": {
-            "example": 3,
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
       "match_start_listFindByMatchIdResponse": {
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/match_start_listMatchStartListData"
-          },
-          "message": {
-            "example": "Match start list fetched successfully",
-            "type": "string"
-          },
-          "statusCode": {
-            "example": 200,
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "match_start_listMatchStartListData": {
         "properties": {
           "data": {
             "items": {
@@ -146,23 +104,15 @@
             },
             "type": "array"
           },
-          "limit": {
-            "example": 25,
-            "format": "int32",
-            "type": "integer"
+          "message": {
+            "example": "Match start list fetched successfully",
+            "type": "string"
           },
-          "page": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
           },
-          "total": {
-            "example": 22,
-            "format": "int32",
-            "type": "integer"
-          },
-          "totalPages": {
-            "example": 1,
+          "statusCode": {
+            "example": 200,
             "format": "int32",
             "type": "integer"
           }
@@ -351,11 +301,17 @@
       "matchesGetMatchEventsByMatchIdResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/matchesMatchEventsData"
+            "items": {
+              "$ref": "#/components/schemas/matchesMatchEvent"
+            },
+            "type": "array"
           },
           "message": {
             "example": "All Match events fetched successfully",
             "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
           },
           "statusCode": {
             "example": 200,
@@ -368,11 +324,17 @@
       "matchesGetMatchFormationByMatchIdResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/matchesMatchFormationsData"
+            "items": {
+              "$ref": "#/components/schemas/matchesMatchFormation"
+            },
+            "type": "array"
           },
           "message": {
             "example": "All Match formation fetched successfully",
             "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
           },
           "statusCode": {
             "example": 200,
@@ -385,11 +347,17 @@
       "matchesGetMatchLineupsByMatchIdResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/matchesMatchLineupsData"
+            "items": {
+              "$ref": "#/components/schemas/matchesMatchLineup"
+            },
+            "type": "array"
           },
           "message": {
             "example": "All Match lineups fetched successfully",
             "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
           },
           "statusCode": {
             "example": 200,
@@ -402,11 +370,17 @@
       "matchesGetMatchPlayerStatsByMatchIdResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/matchesMatchPlayerStatsData"
+            "items": {
+              "$ref": "#/components/schemas/matchesMatchPlayerStats"
+            },
+            "type": "array"
           },
           "message": {
             "example": "All Match Player stats fetched successfully",
             "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
           },
           "statusCode": {
             "example": 200,
@@ -419,11 +393,17 @@
       "matchesGetMatchSequenceDataByMatchIdResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/matchesMatchSequenceDataList"
+            "items": {
+              "$ref": "#/components/schemas/matchesMatchSequenceData"
+            },
+            "type": "array"
           },
           "message": {
             "example": "All Match sequence data fetched successfully",
             "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
           },
           "statusCode": {
             "example": 200,
@@ -436,11 +416,17 @@
       "matchesGetMatchTeamStatsByMatchIdResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/matchesMatchTeamStatsData"
+            "items": {
+              "$ref": "#/components/schemas/matchesMatchTeamStats"
+            },
+            "type": "array"
           },
           "message": {
             "example": "All Match Team stats fetched successfully",
             "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
           },
           "statusCode": {
             "example": 200,
@@ -453,11 +439,17 @@
       "matchesGetMatchesResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/matchesMatchesData"
+            "items": {
+              "$ref": "#/components/schemas/matchesMatch"
+            },
+            "type": "array"
           },
           "message": {
             "example": "All Matches fetched successfully",
             "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
           },
           "statusCode": {
             "example": 200,
@@ -659,37 +651,6 @@
         },
         "type": "object"
       },
-      "matchesMatchEventsData": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/matchesMatchEvent"
-            },
-            "type": "array"
-          },
-          "limit": {
-            "example": 10,
-            "format": "int32",
-            "type": "integer"
-          },
-          "page": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
-          },
-          "total": {
-            "example": 495,
-            "format": "int32",
-            "type": "integer"
-          },
-          "totalPages": {
-            "example": 50,
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
       "matchesMatchFormation": {
         "properties": {
           "changedTime": {
@@ -736,37 +697,6 @@
             "example": "2025-09-15T09:01:03.596Z",
             "format": "date-time",
             "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "matchesMatchFormationsData": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/matchesMatchFormation"
-            },
-            "type": "array"
-          },
-          "limit": {
-            "example": 10,
-            "format": "int32",
-            "type": "integer"
-          },
-          "page": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
-          },
-          "total": {
-            "example": 2,
-            "format": "int32",
-            "type": "integer"
-          },
-          "totalPages": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
           }
         },
         "type": "object"
@@ -834,37 +764,6 @@
         },
         "type": "object"
       },
-      "matchesMatchLineupsData": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/matchesMatchLineup"
-            },
-            "type": "array"
-          },
-          "limit": {
-            "example": 20,
-            "format": "int32",
-            "type": "integer"
-          },
-          "page": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
-          },
-          "total": {
-            "example": 22,
-            "format": "int32",
-            "type": "integer"
-          },
-          "totalPages": {
-            "example": 2,
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
       "matchesMatchPlayerStats": {
         "properties": {
           "createdAt": {
@@ -899,37 +798,6 @@
             "example": "2025-09-15T09:01:03.596Z",
             "format": "date-time",
             "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "matchesMatchPlayerStatsData": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/matchesMatchPlayerStats"
-            },
-            "type": "array"
-          },
-          "limit": {
-            "example": 20,
-            "format": "int32",
-            "type": "integer"
-          },
-          "page": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
-          },
-          "total": {
-            "example": 22,
-            "format": "int32",
-            "type": "integer"
-          },
-          "totalPages": {
-            "example": 2,
-            "format": "int32",
-            "type": "integer"
           }
         },
         "type": "object"
@@ -1021,37 +889,6 @@
         },
         "type": "object"
       },
-      "matchesMatchSequenceDataList": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/matchesMatchSequenceData"
-            },
-            "type": "array"
-          },
-          "limit": {
-            "example": 10,
-            "format": "int32",
-            "type": "integer"
-          },
-          "page": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
-          },
-          "total": {
-            "example": 195,
-            "format": "int32",
-            "type": "integer"
-          },
-          "totalPages": {
-            "example": 20,
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
       "matchesMatchTeam": {
         "properties": {
           "id": {
@@ -1103,68 +940,6 @@
             "example": "2025-09-15T09:01:03.596Z",
             "format": "date-time",
             "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "matchesMatchTeamStatsData": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/matchesMatchTeamStats"
-            },
-            "type": "array"
-          },
-          "limit": {
-            "example": 10,
-            "format": "int32",
-            "type": "integer"
-          },
-          "page": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
-          },
-          "total": {
-            "example": 2,
-            "format": "int32",
-            "type": "integer"
-          },
-          "totalPages": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "matchesMatchesData": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/matchesMatch"
-            },
-            "type": "array"
-          },
-          "limit": {
-            "example": 10,
-            "format": "int32",
-            "type": "integer"
-          },
-          "page": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
-          },
-          "total": {
-            "example": 95,
-            "format": "int32",
-            "type": "integer"
-          },
-          "totalPages": {
-            "example": 10,
-            "format": "int32",
-            "type": "integer"
           }
         },
         "type": "object"
@@ -1362,11 +1137,17 @@
       "playersGetPlayersResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/playersPlayersData"
+            "items": {
+              "$ref": "#/components/schemas/playersPlayer"
+            },
+            "type": "array"
           },
           "message": {
             "example": "All Players fetched successfully",
             "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
           },
           "statusCode": {
             "example": 200,
@@ -1421,8 +1202,18 @@
             "example": "Mohammed",
             "type": "string"
           },
+          "playerPic": {
+            "example": "https://cdn.example.com/players/1001.jpg",
+            "title": "Player picture URL - enriched from the data hub if missing from the legacy API",
+            "type": "string"
+          },
           "rootPlayerId": {
             "example": 1000,
+            "format": "int32",
+            "type": "integer"
+          },
+          "saffPlayerId": {
+            "example": 12345,
             "format": "int32",
             "type": "integer"
           },
@@ -1435,37 +1226,6 @@
             "example": "2025-09-15T09:01:03.596Z",
             "format": "date-time",
             "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "playersPlayersData": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/playersPlayer"
-            },
-            "type": "array"
-          },
-          "limit": {
-            "example": 10,
-            "format": "int32",
-            "type": "integer"
-          },
-          "page": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
-          },
-          "total": {
-            "example": 147,
-            "format": "int32",
-            "type": "integer"
-          },
-          "totalPages": {
-            "example": 15,
-            "format": "int32",
-            "type": "integer"
           }
         },
         "type": "object"
@@ -1500,11 +1260,17 @@
       "schedule_matchesFindAllResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/schedule_matchesScheduleMatchesData"
+            "items": {
+              "$ref": "#/components/schemas/schedule_matchesScheduleMatch"
+            },
+            "type": "array"
           },
           "message": {
             "example": "Schedule matches fetched successfully",
             "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
           },
           "statusCode": {
             "example": 200,
@@ -1563,37 +1329,6 @@
         },
         "type": "object"
       },
-      "schedule_matchesScheduleMatchesData": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/schedule_matchesScheduleMatch"
-            },
-            "type": "array"
-          },
-          "limit": {
-            "example": 10,
-            "format": "int32",
-            "type": "integer"
-          },
-          "page": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
-          },
-          "total": {
-            "example": 76,
-            "format": "int32",
-            "type": "integer"
-          },
-          "totalPages": {
-            "example": 8,
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
       "seasonsGetSeasonByIdResponse": {
         "properties": {
           "data": {
@@ -1614,11 +1349,17 @@
       "seasonsGetSeasonsResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/seasonsSeasonsData"
+            "items": {
+              "$ref": "#/components/schemas/seasonsSeason"
+            },
+            "type": "array"
           },
           "message": {
             "example": "All Seasons fetched successfully",
             "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
           },
           "statusCode": {
             "example": 200,
@@ -1676,37 +1417,6 @@
         },
         "type": "object"
       },
-      "seasonsSeasonsData": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/seasonsSeason"
-            },
-            "type": "array"
-          },
-          "limit": {
-            "example": 10,
-            "format": "int32",
-            "type": "integer"
-          },
-          "page": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
-          },
-          "total": {
-            "example": 47,
-            "format": "int32",
-            "type": "integer"
-          },
-          "totalPages": {
-            "example": 5,
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
       "teamsGetTeamsByIdResponse": {
         "properties": {
           "data": {
@@ -1727,11 +1437,17 @@
       "teamsGetTeamsResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/teamsTeamsData"
+            "items": {
+              "$ref": "#/components/schemas/teamsTeam"
+            },
+            "type": "array"
           },
           "message": {
             "example": "All Teams fetched successfully",
             "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
           },
           "statusCode": {
             "example": 200,
@@ -1793,43 +1509,52 @@
         },
         "type": "object"
       },
-      "teamsTeamsData": {
-        "properties": {
-          "data": {
-            "items": {
-              "$ref": "#/components/schemas/teamsTeam"
-            },
-            "type": "array"
-          },
-          "limit": {
-            "example": 10,
-            "format": "int32",
-            "type": "integer"
-          },
-          "page": {
-            "example": 1,
-            "format": "int32",
-            "type": "integer"
-          },
-          "total": {
-            "example": 38,
-            "format": "int32",
-            "type": "integer"
-          },
-          "totalPages": {
-            "example": 4,
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
       "v1OrderByDir": {
         "enum": [
           "asc",
           "desc"
         ],
         "type": "string"
+      },
+      "v1PaginationMeta": {
+        "properties": {
+          "hasNextPage": {
+            "example": true,
+            "type": "boolean"
+          },
+          "hasPreviousPage": {
+            "example": true,
+            "type": "boolean"
+          },
+          "limit": {
+            "example": 2,
+            "format": "int32",
+            "type": "integer"
+          },
+          "orderBy": {
+            "example": "leagueId",
+            "type": "string"
+          },
+          "orderByDir": {
+            "$ref": "#/components/schemas/v1OrderByDir"
+          },
+          "page": {
+            "example": 3,
+            "format": "int32",
+            "type": "integer"
+          },
+          "total": {
+            "example": 11,
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "example": 6,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
       }
     }
   },
