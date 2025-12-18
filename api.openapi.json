@@ -2913,60 +2913,6 @@
               "format": "int32",
               "type": "integer"
             }
-          },
-          {
-            "description": "Get players by SAFF match ID",
-            "in": "query",
-            "name": "saffMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided SAFF player id",
-            "in": "query",
-            "name": "saffPlayerId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Get players by league ID",
-            "in": "query",
-            "name": "leagueId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Get players by match ID",
-            "in": "query",
-            "name": "matchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided player id",
-            "in": "query",
-            "name": "playerId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Filter records by provided Bepro player id",
-            "in": "query",
-            "name": "beproPlayerId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
           }
         ],
         "responses": {
