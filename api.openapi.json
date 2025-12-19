@@ -561,8 +561,7 @@
             "type": "string"
           },
           "venue": {
-            "example": "King Fahd International Stadium",
-            "type": "string"
+            "$ref": "#/components/schemas/matchesVenue"
           }
         },
         "type": "object"
@@ -1143,6 +1142,16 @@
           "name": {
             "example": "Round 12",
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "matchesVenue": {
+        "properties": {
+          "saffStadiumId": {
+            "example": "2949",
+            "format": "int32",
+            "type": "integer"
           }
         },
         "type": "object"
