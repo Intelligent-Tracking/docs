@@ -260,6 +260,11 @@
           },
           "position": {
             "$ref": "#/components/schemas/matchesPosition"
+          },
+          "saffPlayerId": {
+            "example": 12345,
+            "format": "int32",
+            "type": "integer"
           }
         },
         "type": "object"
@@ -553,6 +558,11 @@
           "round": {
             "$ref": "#/components/schemas/matchesRound"
           },
+          "saffMatchId": {
+            "example": 12345,
+            "format": "int32",
+            "type": "integer"
+          },
           "season": {
             "$ref": "#/components/schemas/matchesMatchSeason"
           },
@@ -750,6 +760,11 @@
           "positionName": {
             "example": "Left Winger",
             "type": "string"
+          },
+          "saffPlayerId": {
+            "example": 12345,
+            "format": "int32",
+            "type": "integer"
           },
           "teamId": {
             "example": 789,
