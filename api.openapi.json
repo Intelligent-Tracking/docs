@@ -226,31 +226,6 @@
         },
         "type": "object"
       },
-      "matchesEventType": {
-        "properties": {
-          "assist": {
-            "example": false,
-            "type": "boolean"
-          },
-          "cross": {
-            "example": false,
-            "type": "boolean"
-          },
-          "eventType": {
-            "example": "PASS",
-            "type": "string"
-          },
-          "keyPass": {
-            "example": true,
-            "type": "boolean"
-          },
-          "outcome": {
-            "example": "SUCCESSFUL",
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
       "matchesFormationPosition": {
         "properties": {
           "playerId": {
@@ -595,7 +570,7 @@
       "matchesMatchEvent": {
         "properties": {
           "attackDirection": {
-            "example": "LEFT_TO_RIGHT",
+            "example": "right",
             "type": "string"
           },
           "createdAt": {
@@ -613,8 +588,17 @@
             "type": "integer"
           },
           "eventTypes": {
+            "example": [
+              {
+                "assist": false,
+                "cross": false,
+                "event_type": "Pass",
+                "key_pass": false,
+                "outcome": "Successful"
+              }
+            ],
             "items": {
-              "$ref": "#/components/schemas/matchesEventType"
+              "type": "object"
             },
             "type": "array"
           },
@@ -635,6 +619,21 @@
           },
           "playerId": {
             "example": 1001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "relativeEvent": {
+            "example": {
+              "event_time": 2695,
+              "id": 186497674,
+              "player_id": 688543,
+              "x": 0.516573,
+              "y": 0.358357
+            },
+            "type": "object"
+          },
+          "saffPlayerId": {
+            "example": 12345,
             "format": "int32",
             "type": "integer"
           },
@@ -801,8 +800,90 @@
             "format": "int32",
             "type": "integer"
           },
+          "saffPlayerId": {
+            "example": 12345,
+            "format": "int32",
+            "type": "integer"
+          },
           "stats": {
-            "$ref": "#/components/schemas/matchesPlayerStatsData"
+            "example": {
+              "aerial_clearance": 0,
+              "aerial_clearance_failed": 0,
+              "aerial_clearance_succeeded": 0,
+              "aerial_duel": 3,
+              "aerial_duel_failed": 2,
+              "aerial_duel_succeeded": 1,
+              "assist": 0,
+              "backward_pass": 0,
+              "backward_pass_succeeded": 0,
+              "block": 1,
+              "clearance": 1,
+              "control_under_pressure": 0,
+              "corner_kick": 0,
+              "cross": 1,
+              "cross_succeeded": 0,
+              "defensive_area_pass": 1,
+              "defensive_area_pass_succeeded": 1,
+              "defensive_line_support": 0,
+              "defensive_line_support_failed": 0,
+              "defensive_line_support_succeeded": 0,
+              "final_third_area_pass": 3,
+              "final_third_area_pass_succeeded": 0,
+              "forward_pass": 9,
+              "forward_pass_succeeded": 4,
+              "foul": 2,
+              "foul_won": 1,
+              "free_kick": 1,
+              "goal": 1,
+              "goal_conceded": 0,
+              "goal_kick": 0,
+              "goal_kick_succeeded": 0,
+              "ground_duel": 1,
+              "ground_duel_failed": 0,
+              "ground_duel_succeeded": 1,
+              "intercept": 0,
+              "intervention": 2,
+              "key_pass": 1,
+              "long_pass": 2,
+              "long_pass_succeeded": 2,
+              "loose_ball_duel": 2,
+              "loose_ball_duel_failed": 1,
+              "loose_ball_duel_succeeded": 1,
+              "medium_range_pass": 3,
+              "medium_range_pass_succeeded": 1,
+              "middle_area_pass": 6,
+              "middle_area_pass_succeeded": 4,
+              "mistake": 0,
+              "offside": 0,
+              "own_goal": 0,
+              "pass": 10,
+              "pass_failed": 5,
+              "pass_succeeded": 5,
+              "penalty_kick": 0,
+              "play_time": 5400000,
+              "rating": 7.40787,
+              "recovery": 7,
+              "red_card": 0,
+              "save_by_catching": 0,
+              "save_by_punching": 0,
+              "short_pass": 5,
+              "short_pass_succeeded": 2,
+              "shot_blocked": 1,
+              "shot_in_PA": 4,
+              "shot_off_target": 3,
+              "shot_on_target": 1,
+              "shot_outside_of_PA": 1,
+              "sideways_pass": 1,
+              "sideways_pass_succeeded": 1,
+              "tackle": 3,
+              "tackle_succeeded": 0,
+              "take_on": 0,
+              "take_on_succeeded": 0,
+              "throw_in": 0,
+              "total_shot": 5,
+              "yellow_card": 0
+            },
+            "type": "object"
           },
           "teamId": {
             "example": 789,
@@ -944,7 +1025,83 @@
             "type": "integer"
           },
           "stats": {
-            "$ref": "#/components/schemas/matchesTeamStatsData"
+            "example": {
+              "aerial_clearance": 3,
+              "aerial_clearance_failed": 0,
+              "aerial_clearance_succeeded": 3,
+              "aerial_duel": 43,
+              "aerial_duel_failed": 21,
+              "aerial_duel_succeeded": 22,
+              "assist": 2,
+              "backward_pass": 27,
+              "backward_pass_succeeded": 25,
+              "block": 18,
+              "clearance": 34,
+              "control_under_pressure": 0,
+              "corner_kick": 4,
+              "cross": 13,
+              "cross_succeeded": 2,
+              "defensive_area_pass": 78,
+              "defensive_area_pass_succeeded": 50,
+              "defensive_line_support": 2,
+              "defensive_line_support_failed": 0,
+              "defensive_line_support_succeeded": 2,
+              "final_third_area_pass": 46,
+              "final_third_area_pass_succeeded": 15,
+              "forward_pass": 176,
+              "forward_pass_succeeded": 81,
+              "foul": 17,
+              "foul_won": 13,
+              "free_kick": 17,
+              "goal": 2,
+              "goal_conceded": 3,
+              "goal_kick": 11,
+              "goal_kick_succeeded": 5,
+              "ground_duel": 7,
+              "ground_duel_failed": 2,
+              "ground_duel_succeeded": 5,
+              "intercept": 3,
+              "intervention": 18,
+              "key_pass": 7,
+              "long_pass": 80,
+              "long_pass_succeeded": 28,
+              "loose_ball_duel": 17,
+              "loose_ball_duel_failed": 11,
+              "loose_ball_duel_succeeded": 6,
+              "medium_range_pass": 85,
+              "medium_range_pass_succeeded": 60,
+              "middle_area_pass": 136,
+              "middle_area_pass_succeeded": 83,
+              "mistake": 16,
+              "offside": 2,
+              "own_goal": 0,
+              "pass": 260,
+              "pass_failed": 112,
+              "pass_succeeded": 148,
+              "penalty_kick": 1,
+              "possession": 0.5931494823578389,
+              "recovery": 112,
+              "red_card": 0,
+              "save_by_catching": 3,
+              "save_by_punching": 0,
+              "short_pass": 95,
+              "short_pass_succeeded": 60,
+              "shot_blocked": 4,
+              "shot_in_PA": 11,
+              "shot_off_target": 8,
+              "shot_on_target": 4,
+              "shot_outside_of_PA": 5,
+              "sideways_pass": 57,
+              "sideways_pass_succeeded": 42,
+              "tackle": 28,
+              "tackle_succeeded": 8,
+              "take_on": 5,
+              "take_on_succeeded": 1,
+              "throw_in": 32,
+              "total_shot": 16,
+              "yellow_card": 1
+            },
+            "type": "object"
           },
           "teamId": {
             "example": 789,
@@ -955,21 +1112,6 @@
             "example": "2025-09-15T09:01:03.596Z",
             "format": "date-time",
             "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "matchesPlayerStatsData": {
-        "properties": {
-          "playTime": {
-            "example": 90,
-            "format": "int32",
-            "type": "integer"
-          },
-          "rating": {
-            "example": 8.5,
-            "format": "double",
-            "type": "number"
           }
         },
         "type": "object"
@@ -999,41 +1141,6 @@
           "name": {
             "example": "Round 12",
             "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "matchesTeamStatsData": {
-        "properties": {
-          "foul": {
-            "example": 12,
-            "format": "int32",
-            "type": "integer"
-          },
-          "goal": {
-            "example": 3,
-            "format": "int32",
-            "type": "integer"
-          },
-          "pass": {
-            "example": 542,
-            "format": "int32",
-            "type": "integer"
-          },
-          "possession": {
-            "example": 62.5,
-            "format": "double",
-            "type": "number"
-          },
-          "redCard": {
-            "example": 0,
-            "format": "int32",
-            "type": "integer"
-          },
-          "yellowCard": {
-            "example": 2,
-            "format": "int32",
-            "type": "integer"
           }
         },
         "type": "object"
@@ -1253,6 +1360,10 @@
           }
         },
         "type": "object"
+      },
+      "protobufNullValue": {
+        "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\nThe JSON representation for `NullValue` is JSON `null`.",
+        "type": "string"
       },
       "rpcStatus": {
         "properties": {

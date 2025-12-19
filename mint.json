@@ -59,16 +59,16 @@
                 "reference/api/matches/list-matches",
                 "reference/api/matches/get-match",
                 "reference/api/matches/formations/get-match-formation",
-                "reference/api/matches/lineups/get-match-lineup",
-                "reference/api/matches/player-stats/list-player-stats",
-                "reference/api/matches/team-stats/list-team-stats"
+                "reference/api/matches/lineups/get-match-lineup"
               ]
             },
             {
               "group": "Analysis",
               "pages": [
                 "reference/api/matches/events/list-match-events",
-                "reference/api/matches/sequences/get-match-sequences"
+                "reference/api/matches/sequences/list-match-sequences",
+                "reference/api/matches/player-stats/list-match-player-stats",
+                "reference/api/matches/team-stats/list-match-team-stats"
               ]
             },
             {
