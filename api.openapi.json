@@ -663,7 +663,8 @@
       "matchesMatchFormation": {
         "properties": {
           "changedTime": {
-            "example": 0,
+            "description": "Time in milliseconds when the formation changed. If there is obvious moment at which the formation changed,\nthis will be absent.",
+            "example": 2566700,
             "format": "int32",
             "type": "integer"
           },
@@ -973,6 +974,7 @@
             "type": "integer"
           },
           "teamId": {
+            "description": "Team ID associated with this sequence data. This can be absent when the events in this sequence involve both teams.",
             "example": 789,
             "format": "int32",
             "type": "integer"
