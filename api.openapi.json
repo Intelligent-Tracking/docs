@@ -182,7 +182,7 @@
       "match_videosMatchVideoData": {
         "properties": {
           "competitionId": {
-            "example": "comp-123",
+            "example": "123",
             "type": "string"
           },
           "createdAt": {
@@ -196,7 +196,7 @@
             "type": "integer"
           },
           "matchId": {
-            "example": "match-5001",
+            "example": "5001",
             "type": "string"
           },
           "updatedAt": {
@@ -757,7 +757,7 @@
             "$ref": "#/components/schemas/matchesPosition"
           },
           "positionName": {
-            "example": "Left Winger",
+            "example": "LW",
             "type": "string"
           },
           "saffPlayerId": {
@@ -1696,8 +1696,9 @@
     }
   },
   "info": {
-    "title": "order_by.proto",
-    "version": "version not set"
+    "description": "API for accessing football match tracking data, statistics, and analytics",
+    "title": "IntellTracking API",
+    "version": "1.0"
   },
   "openapi": "3.0.3",
   "paths": {
@@ -1720,6 +1721,7 @@
             "in": "query",
             "name": "limit",
             "schema": {
+              "example": 10,
               "format": "int32",
               "type": "integer"
             }
@@ -1729,6 +1731,7 @@
             "in": "query",
             "name": "orderBy",
             "schema": {
+              "example": "id",
               "type": "string"
             }
           },
@@ -1749,6 +1752,7 @@
             "in": "query",
             "name": "page",
             "schema": {
+              "example": 1,
               "format": "int32",
               "type": "integer"
             }
@@ -1849,6 +1853,7 @@
             "in": "query",
             "name": "limit",
             "schema": {
+              "example": 10,
               "format": "int32",
               "type": "integer"
             }
@@ -1858,6 +1863,7 @@
             "in": "query",
             "name": "orderBy",
             "schema": {
+              "example": "id",
               "type": "string"
             }
           },
@@ -1878,6 +1884,7 @@
             "in": "query",
             "name": "page",
             "schema": {
+              "example": 1,
               "format": "int32",
               "type": "integer"
             }
@@ -1925,6 +1932,7 @@
             "in": "query",
             "name": "limit",
             "schema": {
+              "example": 10,
               "format": "int32",
               "type": "integer"
             }
@@ -1934,6 +1942,7 @@
             "in": "query",
             "name": "orderBy",
             "schema": {
+              "example": "id",
               "type": "string"
             }
           },
@@ -1954,6 +1963,7 @@
             "in": "query",
             "name": "page",
             "schema": {
+              "example": 1,
               "format": "int32",
               "type": "integer"
             }
@@ -2030,6 +2040,7 @@
             "in": "query",
             "name": "limit",
             "schema": {
+              "example": 10,
               "format": "int32",
               "type": "integer"
             }
@@ -2039,6 +2050,7 @@
             "in": "query",
             "name": "orderBy",
             "schema": {
+              "example": "id",
               "type": "string"
             }
           },
@@ -2059,6 +2071,7 @@
             "in": "query",
             "name": "page",
             "schema": {
+              "example": 1,
               "format": "int32",
               "type": "integer"
             }
@@ -2169,6 +2182,7 @@
             "in": "query",
             "name": "limit",
             "schema": {
+              "example": 10,
               "format": "int32",
               "type": "integer"
             }
@@ -2187,6 +2201,7 @@
             "in": "query",
             "name": "orderBy",
             "schema": {
+              "example": "id",
               "type": "string"
             }
           },
@@ -2216,6 +2231,7 @@
             "in": "query",
             "name": "page",
             "schema": {
+              "example": 1,
               "format": "int32",
               "type": "integer"
             }
@@ -2301,6 +2317,7 @@
             "in": "query",
             "name": "limit",
             "schema": {
+              "example": 10,
               "format": "int32",
               "type": "integer"
             }
@@ -2310,6 +2327,7 @@
             "in": "query",
             "name": "orderBy",
             "schema": {
+              "example": "id",
               "type": "string"
             }
           },
@@ -2330,6 +2348,7 @@
             "in": "query",
             "name": "page",
             "schema": {
+              "example": 1,
               "format": "int32",
               "type": "integer"
             }
@@ -2395,6 +2414,7 @@
             "in": "query",
             "name": "limit",
             "schema": {
+              "example": 10,
               "format": "int32",
               "type": "integer"
             }
@@ -2404,6 +2424,7 @@
             "in": "query",
             "name": "orderBy",
             "schema": {
+              "example": "id",
               "type": "string"
             }
           },
@@ -2424,6 +2445,7 @@
             "in": "query",
             "name": "page",
             "schema": {
+              "example": 1,
               "format": "int32",
               "type": "integer"
             }
@@ -2489,6 +2511,7 @@
             "in": "query",
             "name": "limit",
             "schema": {
+              "example": 10,
               "format": "int32",
               "type": "integer"
             }
@@ -2498,6 +2521,7 @@
             "in": "query",
             "name": "orderBy",
             "schema": {
+              "example": "id",
               "type": "string"
             }
           },
@@ -2518,6 +2542,7 @@
             "in": "query",
             "name": "page",
             "schema": {
+              "example": 1,
               "format": "int32",
               "type": "integer"
             }
@@ -2610,6 +2635,7 @@
             "in": "query",
             "name": "limit",
             "schema": {
+              "example": 10,
               "format": "int32",
               "type": "integer"
             }
@@ -2619,6 +2645,7 @@
             "in": "query",
             "name": "orderBy",
             "schema": {
+              "example": "id",
               "type": "string"
             }
           },
@@ -2639,6 +2666,7 @@
             "in": "query",
             "name": "page",
             "schema": {
+              "example": 1,
               "format": "int32",
               "type": "integer"
             }
@@ -2704,6 +2732,7 @@
             "in": "query",
             "name": "limit",
             "schema": {
+              "example": 10,
               "format": "int32",
               "type": "integer"
             }
@@ -2713,6 +2742,7 @@
             "in": "query",
             "name": "orderBy",
             "schema": {
+              "example": "id",
               "type": "string"
             }
           },
@@ -2733,6 +2763,7 @@
             "in": "query",
             "name": "page",
             "schema": {
+              "example": 1,
               "format": "int32",
               "type": "integer"
             }
@@ -2926,6 +2957,7 @@
             "in": "query",
             "name": "limit",
             "schema": {
+              "example": 10,
               "format": "int32",
               "type": "integer"
             }
@@ -2935,6 +2967,7 @@
             "in": "query",
             "name": "orderBy",
             "schema": {
+              "example": "id",
               "type": "string"
             }
           },
@@ -2955,6 +2988,7 @@
             "in": "query",
             "name": "page",
             "schema": {
+              "example": 1,
               "format": "int32",
               "type": "integer"
             }
@@ -3085,6 +3119,7 @@
             "in": "query",
             "name": "limit",
             "schema": {
+              "example": 10,
               "format": "int32",
               "type": "integer"
             }
@@ -3094,6 +3129,7 @@
             "in": "query",
             "name": "orderBy",
             "schema": {
+              "example": "id",
               "type": "string"
             }
           },
@@ -3114,6 +3150,7 @@
             "in": "query",
             "name": "page",
             "schema": {
+              "example": 1,
               "format": "int32",
               "type": "integer"
             }
@@ -3199,6 +3236,7 @@
             "in": "query",
             "name": "limit",
             "schema": {
+              "example": 10,
               "format": "int32",
               "type": "integer"
             }
@@ -3208,6 +3246,7 @@
             "in": "query",
             "name": "orderBy",
             "schema": {
+              "example": "id",
               "type": "string"
             }
           },
@@ -3228,6 +3267,7 @@
             "in": "query",
             "name": "page",
             "schema": {
+              "example": 1,
               "format": "int32",
               "type": "integer"
             }
