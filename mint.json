@@ -21,7 +21,7 @@
     }
   },
   "api": {
-    "baseUrl": "https://saff-api-972411116233.me-central2.run.app",
+    "baseUrl": "https://api1.intelltracking.com",
     "auth": {
       "method": "bearer"
     }
