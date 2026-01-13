@@ -1598,6 +1598,21 @@
         },
         "type": "object"
       },
+      "teamsPlayerIdEntry": {
+        "properties": {
+          "playerId": {
+            "example": 491036,
+            "format": "int32",
+            "type": "integer"
+          },
+          "saffPlayerId": {
+            "example": 367253,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
       "teamsTeam": {
         "properties": {
           "createdAt": {
@@ -1624,11 +1639,13 @@
           },
           "playerIds": {
             "example": [
-              "1001",
-              "1002"
+              {
+                "player_id": 491036,
+                "saff_player_id": 367253
+              }
             ],
             "items": {
-              "type": "string"
+              "$ref": "#/components/schemas/teamsPlayerIdEntry"
             },
             "type": "array"
           },
