@@ -56,8 +56,7 @@
             {
               "group": "General",
               "pages": [
-                "reference/api/matches/list-matches",
-                "reference/api/matches/get-match",
+                "reference/api/matches/get-match(es)",
                 "reference/api/matches/formations/get-match-formation",
                 "reference/api/matches/lineups/get-match-lineup"
               ]
@@ -83,29 +82,25 @@
         {
           "group": "Players",
           "pages": [
-            "reference/api/players/list-players",
-            "reference/api/players/get-player"
+            "reference/api/players/get-player(s)"
           ]
         },
         {
           "group": "Teams",
           "pages": [
-            "reference/api/teams/list-teams",
-            "reference/api/teams/get-team"
+            "reference/api/teams/get-team(s)"
           ]
         },
         {
           "group": "Leagues",
           "pages": [
-            "reference/api/leagues/list-leagues",
-            "reference/api/leagues/get-league"
+            "reference/api/leagues/get-league(s)"
           ]
         },
         {
           "group": "Seasons",
           "pages": [
-            "reference/api/seasons/list-seasons",
-            "reference/api/seasons/get-season"
+            "reference/api/seasons/get-season(s)"
           ]
         }
       ]
