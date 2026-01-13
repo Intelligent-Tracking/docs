@@ -997,6 +997,10 @@
             "example": "SA",
             "type": "string"
           },
+          "logo": {
+            "example": "https://api.saff.sa/getPhoto?idClub=1QmfBvQOzllBNsawXPvg1hJ%2FQ0jQCBMZp1L9i%2BvEcBA%3D",
+            "type": "string"
+          },
           "name": {
             "example": "Al-Hilal",
             "type": "string"
