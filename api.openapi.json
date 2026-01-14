@@ -2107,15 +2107,6 @@
             }
           },
           {
-            "description": "Get matches by SAFF player ID",
-            "in": "query",
-            "name": "saffPlayerId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
             "description": "Get matches by league ID",
             "in": "query",
             "name": "leagueId",
@@ -2146,15 +2137,6 @@
             "description": "Filter records by provided Bepro match ID",
             "in": "query",
             "name": "beproMatchId",
-            "schema": {
-              "format": "int32",
-              "type": "integer"
-            }
-          },
-          {
-            "description": "Get matches by player ID",
-            "in": "query",
-            "name": "playerId",
             "schema": {
               "format": "int32",
               "type": "integer"
