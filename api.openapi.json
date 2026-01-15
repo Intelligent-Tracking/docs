@@ -1717,9 +1717,15 @@
     }
   },
   "info": {
+    "contact": {
+      "email": "support@intelltracking.com",
+      "name": "IntellTracking Support",
+      "url": "https://intelltracking.com"
+    },
     "description": "API for accessing football match tracking data, statistics, and analytics",
     "title": "IntellTracking API",
-    "version": "1.0"
+    "version": "1.0",
+    "x-last-updated": "2026-01-15T09:19:00Z"
   },
   "openapi": "3.0.3",
   "paths": {
