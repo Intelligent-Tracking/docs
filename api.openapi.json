@@ -2560,7 +2560,7 @@
             }
           },
           {
-            "description": "Filter records by SAFF player id",
+            "description": "Filter records by SAFF player id. This only works in combination with filtering by a single match.",
             "in": "query",
             "name": "saffPlayerId",
             "schema": {
@@ -2587,7 +2587,7 @@
             }
           },
           {
-            "description": "Filter records by player id",
+            "description": "Filter records by player id This only works in combination with filtering by a single match.",
             "in": "query",
             "name": "playerId",
             "schema": {
@@ -2596,7 +2596,7 @@
             }
           },
           {
-            "description": "Filter records by team id",
+            "description": "Filter records by team id This only works in combination with filtering by a single match.",
             "in": "query",
             "name": "teamId",
             "schema": {
