@@ -2191,7 +2191,7 @@
             }
           },
           {
-            "description": "Filter records by provided match ID",
+            "description": "Filter records by provided match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "matchId",
             "schema": {
@@ -2221,7 +2221,7 @@
             }
           },
           {
-            "description": "Filter records by provided SAFF match ID",
+            "description": "Filter records by provided SAFF match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
@@ -2240,7 +2240,7 @@
             }
           },
           {
-            "description": "Filter records by provided Bepro match ID",
+            "description": "Filter records by provided Bepro match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "beproMatchId",
             "schema": {
@@ -2357,7 +2357,7 @@
             }
           },
           {
-            "description": "Filter records by provided SAFF match ID",
+            "description": "Filter records by provided SAFF match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
@@ -2366,7 +2366,7 @@
             }
           },
           {
-            "description": "Filter records by provided match ID",
+            "description": "Filter records by provided match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "matchId",
             "schema": {
@@ -2375,7 +2375,7 @@
             }
           },
           {
-            "description": "Filter records by provided Bepro match ID",
+            "description": "Filter records by provided Bepro match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "beproMatchId",
             "schema": {
@@ -2454,7 +2454,7 @@
             }
           },
           {
-            "description": "Filter records by provided SAFF match ID",
+            "description": "Filter records by provided SAFF match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
@@ -2463,7 +2463,7 @@
             }
           },
           {
-            "description": "Filter records by provided match ID",
+            "description": "Filter records by provided match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "matchId",
             "schema": {
@@ -2472,7 +2472,7 @@
             }
           },
           {
-            "description": "Filter records by provided Bepro match ID",
+            "description": "Filter records by provided Bepro match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "beproMatchId",
             "schema": {
@@ -2551,7 +2551,7 @@
             }
           },
           {
-            "description": "Filter records by provided SAFF match ID",
+            "description": "Filter records by provided SAFF match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
@@ -2569,7 +2569,7 @@
             }
           },
           {
-            "description": "Filter records by provided match ID",
+            "description": "Filter records by provided match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "matchId",
             "schema": {
@@ -2578,7 +2578,7 @@
             }
           },
           {
-            "description": "Filter records by provided Bepro match ID",
+            "description": "Filter records by provided Bepro match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "beproMatchId",
             "schema": {
@@ -2675,7 +2675,7 @@
             }
           },
           {
-            "description": "Filter records by provided SAFF match ID",
+            "description": "Filter records by provided SAFF match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
@@ -2684,7 +2684,7 @@
             }
           },
           {
-            "description": "Filter records by provided match ID",
+            "description": "Filter records by provided match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "matchId",
             "schema": {
@@ -2693,7 +2693,7 @@
             }
           },
           {
-            "description": "Filter records by provided Bepro match ID",
+            "description": "Filter records by provided Bepro match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "beproMatchId",
             "schema": {
@@ -2772,7 +2772,7 @@
             }
           },
           {
-            "description": "Filter records by provided SAFF match ID",
+            "description": "Filter records by provided SAFF match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
@@ -2781,7 +2781,7 @@
             }
           },
           {
-            "description": "Filter records by provided match ID",
+            "description": "Filter records by provided match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "matchId",
             "schema": {
@@ -2790,7 +2790,7 @@
             }
           },
           {
-            "description": "Filter records by provided Bepro match ID",
+            "description": "Filter records by provided Bepro match ID. You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "beproMatchId",
             "schema": {
@@ -2828,6 +2828,7 @@
         "operationId": "MatchesService_GetVideoTiming",
         "parameters": [
           {
+            "description": "You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "saffMatchId",
             "schema": {
@@ -2836,6 +2837,7 @@
             }
           },
           {
+            "description": "You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "id",
             "schema": {
@@ -2844,6 +2846,7 @@
             }
           },
           {
+            "description": "You must provide either saffMatchId, matchId or beproMatchId.",
             "in": "query",
             "name": "matchId",
             "schema": {
