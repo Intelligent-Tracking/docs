@@ -1404,7 +1404,7 @@
           },
           "intenseRunningDistanceRatio": {
             "description": "A fraction between 0 and 100 representing the ratio of intense running distance to total distance as a percentage",
-            "example": 0.08,
+            "example": 5.2,
             "format": "double",
             "title": "A fraction between 0 and 100 representing the ratio of intense running distance to total distance as a percentage",
             "type": "number"
