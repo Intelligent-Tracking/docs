@@ -1254,6 +1254,311 @@
         },
         "type": "object"
       },
+      "physical_dataGetPlayerStatsResponse": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/physical_dataPlayerStat"
+            },
+            "type": "array"
+          },
+          "message": {
+            "example": "All stats fetched successfully",
+            "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "title": "Response message for GetPlayerStats",
+        "type": "object"
+      },
+      "physical_dataGetTeamStatsResponse": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/physical_dataTeamStat"
+            },
+            "type": "array"
+          },
+          "message": {
+            "example": "All stats fetched successfully",
+            "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/v1PaginationMeta"
+          },
+          "statusCode": {
+            "example": 200,
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "title": "Response message for GetTeamStats",
+        "type": "object"
+      },
+      "physical_dataPlayerStat": {
+        "properties": {
+          "beproMatchId": {
+            "example": 202496,
+            "format": "int64",
+            "title": "Bepro Match ID",
+            "type": "string"
+          },
+          "beproPlayerId": {
+            "example": 123456,
+            "format": "int64",
+            "title": "Bepro Player ID",
+            "type": "string"
+          },
+          "beproTeamId": {
+            "example": 42537,
+            "format": "int64",
+            "title": "Bepro Team ID",
+            "type": "string"
+          },
+          "initialPositionName": {
+            "example": "LW",
+            "title": "Initial position name",
+            "type": "string"
+          },
+          "isHome": {
+            "example": true,
+            "title": "Whether the team is the home team",
+            "type": "boolean"
+          },
+          "isMain": {
+            "example": true,
+            "title": "Whether the player was in the starting lineup",
+            "type": "boolean"
+          },
+          "matchStartTime": {
+            "example": "2025-01-15T20:00:00Z",
+            "format": "date-time",
+            "title": "Match start time (ISO 8601 format)",
+            "type": "string"
+          },
+          "playerName": {
+            "example": "Mohammed Al-Dawsari",
+            "title": "Player name",
+            "type": "string"
+          },
+          "saffMatchId": {
+            "example": 32485,
+            "format": "int64",
+            "title": "SAFF Match ID",
+            "type": "string"
+          },
+          "saffPlayerId": {
+            "example": 1001,
+            "format": "int64",
+            "title": "SAFF Player ID",
+            "type": "string"
+          },
+          "saffTeamId": {
+            "example": 63,
+            "format": "int64",
+            "title": "SAFF Team ID",
+            "type": "string"
+          },
+          "shirtNumber": {
+            "example": "10",
+            "title": "Shirt number",
+            "type": "string"
+          },
+          "sportType": {
+            "example": "football",
+            "title": "Sport type (e.g., \"football\")",
+            "type": "string"
+          },
+          "stats": {
+            "$ref": "#/components/schemas/physical_dataPlayerStats"
+          },
+          "teamName": {
+            "example": "Al-Hilal",
+            "title": "Team name",
+            "type": "string"
+          }
+        },
+        "title": "Individual player statistics for a match",
+        "type": "object"
+      },
+      "physical_dataPlayerStats": {
+        "properties": {
+          "averageSpeed": {
+            "example": 6.8,
+            "format": "double",
+            "title": "Average speed in km/h",
+            "type": "number"
+          },
+          "intenseRunningDistanceRatio": {
+            "example": 0.08,
+            "format": "double",
+            "title": "A fraction between 0 and 100 representing the ratio of intense running distance to total distance as a percentage",
+            "type": "number"
+          },
+          "maxSpeed": {
+            "example": 32.4,
+            "format": "double",
+            "title": "Maximum speed in km/h",
+            "type": "number"
+          },
+          "playingTime": {
+            "example": 90,
+            "format": "int64",
+            "title": "Playing time in minutes",
+            "type": "string"
+          },
+          "rating": {
+            "example": 7.3,
+            "format": "double",
+            "title": "Player performance rating",
+            "type": "number"
+          },
+          "running": {
+            "$ref": "#/components/schemas/physical_dataRunningStats"
+          },
+          "totalDistance": {
+            "example": 10234,
+            "format": "double",
+            "title": "Total distance covered in meters (rounded to full integer)",
+            "type": "number"
+          }
+        },
+        "title": "Strongly typed player statistics",
+        "type": "object"
+      },
+      "physical_dataRunningMetrics": {
+        "properties": {
+          "count": {
+            "example": 12,
+            "format": "int32",
+            "title": "Number of runs",
+            "type": "integer"
+          },
+          "distance": {
+            "example": 450,
+            "format": "double",
+            "title": "Total distance covered in meters (rounded to full integer)",
+            "type": "number"
+          }
+        },
+        "title": "Running metrics (count and distance)",
+        "type": "object"
+      },
+      "physical_dataRunningStats": {
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/physical_dataRunningType"
+          }
+        },
+        "title": "Running statistics breakdown",
+        "type": "object"
+      },
+      "physical_dataRunningType": {
+        "properties": {
+          "sprint": {
+            "$ref": "#/components/schemas/physical_dataRunningMetrics"
+          },
+          "vhir": {
+            "$ref": "#/components/schemas/physical_dataRunningMetrics"
+          }
+        },
+        "title": "Running type breakdown (sprint, VHIR, etc.)",
+        "type": "object"
+      },
+      "physical_dataTeamStat": {
+        "properties": {
+          "beproMatchId": {
+            "example": 202496,
+            "format": "int64",
+            "title": "Bepro Match ID",
+            "type": "string"
+          },
+          "beproTeamId": {
+            "example": 42537,
+            "format": "int64",
+            "title": "Bepro Team ID",
+            "type": "string"
+          },
+          "isHome": {
+            "example": true,
+            "title": "Whether the team is the home team",
+            "type": "boolean"
+          },
+          "matchStartTime": {
+            "example": "2025-01-15T20:00:00Z",
+            "format": "date-time",
+            "title": "Match start time (ISO 8601 format)",
+            "type": "string"
+          },
+          "saffMatchId": {
+            "example": 32485,
+            "format": "int64",
+            "title": "SAFF Match ID",
+            "type": "string"
+          },
+          "saffTeamId": {
+            "example": 63,
+            "format": "int64",
+            "title": "SAFF Team ID",
+            "type": "string"
+          },
+          "sportType": {
+            "example": "football",
+            "title": "Sport type (e.g., \"football\")",
+            "type": "string"
+          },
+          "stats": {
+            "$ref": "#/components/schemas/physical_dataTeamStats"
+          },
+          "teamName": {
+            "example": "Al-Hilal",
+            "title": "Team name",
+            "type": "string"
+          }
+        },
+        "title": "Team statistics for a match",
+        "type": "object"
+      },
+      "physical_dataTeamStats": {
+        "properties": {
+          "averageSpeed": {
+            "example": 6.1,
+            "format": "double",
+            "title": "Average speed in km/h",
+            "type": "number"
+          },
+          "intenseRunningDistanceRatio": {
+            "example": 5.3,
+            "format": "double",
+            "title": "A fraction between 0 and 100 representing the ratio of intense running distance to total distance as a percentage",
+            "type": "number"
+          },
+          "maxSpeed": {
+            "example": 35.1,
+            "format": "double",
+            "title": "Maximum speed in km/h",
+            "type": "number"
+          },
+          "running": {
+            "$ref": "#/components/schemas/physical_dataRunningStats"
+          },
+          "totalDistance": {
+            "example": 103264,
+            "format": "double",
+            "title": "Total distance covered in meters (rounded to full integer)",
+            "type": "number"
+          }
+        },
+        "title": "Strongly typed team statistics",
+        "type": "object"
+      },
       "playersGetPlayerByIdResponse": {
         "properties": {
           "data": {
@@ -2942,6 +3247,194 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/matchesGetMatchByIdResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        }
+      }
+    },
+    "/api/vendor-apis/physical-data/player_stats": {
+      "get": {
+        "operationId": "PhysicalDataService_GetPlayerStats",
+        "parameters": [
+          {
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "example": 10,
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "example": 1,
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided Bepro match ID. You must provide either saffMatchId or beproMatchId.",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided SAFF match ID. You must provide either saffMatchId or beproMatchId.",
+            "in": "query",
+            "name": "saffMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by Bepro team id. This only works in combination with filtering by a single match.",
+            "in": "query",
+            "name": "beproTeamId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by SAFF team id. This only works in combination with filtering by a single match.",
+            "in": "query",
+            "name": "saffTeamId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by Bepro player id. This only works in combination with filtering by a single match.",
+            "in": "query",
+            "name": "beproPlayerId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by SAFF player id. This only works in combination with filtering by a single match.",
+            "in": "query",
+            "name": "saffPlayerId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/physical_dataGetPlayerStatsResponse"
+                }
+              }
+            },
+            "description": "A successful response."
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description": "An unexpected error response."
+          }
+        }
+      }
+    },
+    "/api/vendor-apis/physical-data/team_stats": {
+      "get": {
+        "operationId": "PhysicalDataService_GetTeamStats",
+        "parameters": [
+          {
+            "description": "Number of items per page",
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "example": 10,
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "example": 1,
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Filter records by provided Bepro match ID. You must provide either saffMatchId or beproMatchId.",
+            "in": "query",
+            "name": "beproMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by provided SAFF match ID. You must provide either saffMatchId or beproMatchId.",
+            "in": "query",
+            "name": "saffMatchId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by Bepro team id. This only works in combination with filtering by a single match.",
+            "in": "query",
+            "name": "beproTeamId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter records by SAFF team id. This only works in combination with filtering by a single match.",
+            "in": "query",
+            "name": "saffTeamId",
+            "schema": {
+              "format": "int64",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/physical_dataGetTeamStatsResponse"
                 }
               }
             },
