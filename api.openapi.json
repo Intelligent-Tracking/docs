@@ -2014,7 +2014,7 @@
             "type": "integer"
           },
           "orderBy": {
-            "example": "leagueId",
+            "example": "id",
             "type": "string"
           },
           "orderByDir": {
