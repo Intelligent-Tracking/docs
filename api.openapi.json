@@ -149,6 +149,11 @@
             "example": "Forward",
             "type": "string"
           },
+          "saffTeamId": {
+            "example": 63,
+            "format": "int32",
+            "type": "integer"
+          },
           "teamId": {
             "example": 789,
             "format": "int32",
@@ -538,6 +543,11 @@
             "format": "int32",
             "type": "integer"
           },
+          "saffTeamId": {
+            "example": 63,
+            "format": "int32",
+            "type": "integer"
+          },
           "season": {
             "$ref": "#/components/schemas/matchesMatchSeason"
           },
@@ -636,6 +646,11 @@
             "format": "int32",
             "type": "integer"
           },
+          "saffTeamId": {
+            "example": 63,
+            "format": "int32",
+            "type": "integer"
+          },
           "teamId": {
             "example": 789,
             "format": "int32",
@@ -694,6 +709,11 @@
           },
           "matchId": {
             "example": 5001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "saffTeamId": {
+            "example": 63,
             "format": "int32",
             "type": "integer"
           },
@@ -765,6 +785,11 @@
             "format": "int32",
             "type": "integer"
           },
+          "saffTeamId": {
+            "example": 63,
+            "format": "int32",
+            "type": "integer"
+          },
           "teamId": {
             "example": 789,
             "format": "int32",
@@ -802,6 +827,11 @@
           },
           "saffPlayerId": {
             "example": 12345,
+            "format": "int32",
+            "type": "integer"
+          },
+          "saffTeamId": {
+            "example": 63,
             "format": "int32",
             "type": "integer"
           },
@@ -967,6 +997,11 @@
             "format": "int32",
             "type": "integer"
           },
+          "saffTeamId": {
+            "example": 63,
+            "format": "int32",
+            "type": "integer"
+          },
           "startTime": {
             "example": 120,
             "format": "int32",
@@ -1008,6 +1043,11 @@
           "nameEn": {
             "example": "Al-Hilal FC",
             "type": "string"
+          },
+          "saffTeamId": {
+            "example": 63,
+            "format": "int32",
+            "type": "integer"
           }
         },
         "type": "object"
@@ -1026,6 +1066,11 @@
           },
           "matchId": {
             "example": 5001,
+            "format": "int32",
+            "type": "integer"
+          },
+          "saffTeamId": {
+            "example": 63,
             "format": "int32",
             "type": "integer"
           },
@@ -1678,6 +1723,11 @@
             "format": "int32",
             "type": "integer"
           },
+          "saffTeamId": {
+            "example": 63,
+            "format": "int32",
+            "type": "integer"
+          },
           "teamId": {
             "example": 789,
             "format": "int32",
@@ -1972,6 +2022,11 @@
               "$ref": "#/components/schemas/teamsPlayerIdEntry"
             },
             "type": "array"
+          },
+          "saffTeamId": {
+            "example": 63,
+            "format": "int32",
+            "type": "integer"
           },
           "seasonId": {
             "example": 456,
