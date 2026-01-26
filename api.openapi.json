@@ -1901,6 +1901,17 @@
             "format": "int32",
             "type": "integer"
           },
+          "saffTeamIds": {
+            "example": [
+              63,
+              64
+            ],
+            "items": {
+              "format": "int32",
+              "type": "integer"
+            },
+            "type": "array"
+          },
           "seasonGroupName": {
             "example": "Regular Season",
             "type": "string"
